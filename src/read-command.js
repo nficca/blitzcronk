@@ -14,11 +14,14 @@ module.exports = (msg, command, args) => {
   var execute_command = null;
 
   switch(command) {
-    case 'ping':
-      execute_command = general.ping;
+    case 'choose':
+      execute_command = general.choose;
       break;
     case 'echo':
       execute_command = general.echo;
+      break;
+    case 'ping':
+      execute_command = general.ping;
       break;
     case 'users':
       execute_command = general.users;

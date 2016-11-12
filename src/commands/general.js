@@ -1,15 +1,17 @@
+var random = require('../helpers/random');
+
 /**
  * General commands
  */
 module.exports = {
   /**
-   * Responds with 'pong!'
+   * Chooses the winning argument
    *
    * @param {Message} msg
    * @param {Array}   args
    */
-  ping: (msg, args) => {
-    msg.channel.sendMessage('pong!');
+  choose: (msg, args) => {
+    msg.channel.sendMessage(random.element(args));
   },
 
   /**
@@ -20,6 +22,16 @@ module.exports = {
    */
   echo: (msg, args) => {
     msg.channel.sendMessage(args.join(' '));
+  },
+
+  /**
+   * Responds with 'pong!'
+   *
+   * @param {Message} msg
+   * @param {Array}   args
+   */
+  ping: (msg, args) => {
+    msg.channel.sendMessage('pong!');
   },
 
   /**
