@@ -1,4 +1,5 @@
-var random = require('../helpers/random');
+var random = require('../helpers/random'),
+    giphy = require('giphy-api')();
 
 /**
  * General commands
@@ -22,6 +23,22 @@ module.exports = {
    */
   echo: (msg, args) => {
     msg.channel.sendMessage(args.join(' '));
+  },
+
+  /**
+   * Searches giphy for a gif that matches the query
+   *
+   * @param {Message} msg
+   * @param {Array}   args
+   */
+  gif: (msg, args) => {
+    giphy.search(args.join(' '), (err, res) => {
+      if (!err && res.data.length) {
+        msg.channel.sendMessage(res.data[0].url);
+      } else {
+        msg.channel.sendMessage('Your search didn\'t yield any results! :sob:');
+      }
+    });
   },
 
   /**

@@ -20,6 +20,9 @@ module.exports = (msg, command, args) => {
     case 'echo':
       execute_command = general.echo;
       break;
+    case 'gif':
+      execute_command = general.gif;
+      break;
     case 'ping':
       execute_command = general.ping;
       break;
