@@ -1,12 +1,12 @@
 var random = require('../helpers/random'),
-    giphy = require('giphy-api')();
+    giphy = require('giphy-api')(),
+    _ = require('lodash'),
+    docs = require('../docs/docs.json');
 
-/**
- * General commands
- */
 module.exports = {
   /**
-   * Chooses the winning argument
+   * /choose <choices...>
+   * Chooses between given choices
    *
    * @param {Message} msg
    * @param {Array}   args
@@ -16,7 +16,8 @@ module.exports = {
   },
 
   /**
-   * Echoes the a text copy of the arguments
+   * /echo <phrase>
+   * Echoes the a text copy of phrase
    *
    * @param {Message} msg
    * @param {Array}   args
@@ -26,6 +27,7 @@ module.exports = {
   },
 
   /**
+   * /gif <query>
    * Searches giphy for a gif that matches the query
    *
    * @param {Message} msg
@@ -42,6 +44,7 @@ module.exports = {
   },
 
   /**
+   * /gifr <query>
    * Searches giphy for a random gif that matches the query
    *
    * @param {Message} msg
@@ -58,6 +61,41 @@ module.exports = {
   },
 
   /**
+   * /help <command>
+   * Show help for specific command, or all commands if none given
+   *
+   * @param {Message} msg
+   * @param {Array}   args
+   */
+  help: (msg, args) => {
+    let info = null;
+
+    if (args.length) {
+      info = _.find(docs, {
+        name: args[0],
+        kind: 'function',
+        memberof: 'module.exports'
+      });
+      if (info) {
+        msg.channel.sendMessage('```' + info.description + '```');
+      } else {
+        msg.channel.sendMessage('There is no `' + args[0] + '` command! :sob:');
+      }
+    } else {
+      info = '';
+      _.filter(docs, {
+        kind: 'function',
+        memberof: 'module.exports'
+      }).forEach((doc) => {
+        info += doc.description + '\n\n';
+      });
+
+      msg.channel.sendMessage('```Commands:\n\n' + info + '```');
+    }
+  },
+
+  /**
+   * /ping
    * Responds with 'pong!'
    *
    * @param {Message} msg
@@ -68,13 +106,8 @@ module.exports = {
   },
 
   /**
-   * Rolls a number between 1-100.
-   * If arguments X, Y are given, rolls Y dXs.
-   *
-   * Ex: roll 2 6 = roll two d6 dice.
-   *
-   * Number of rolls must be between 1 and 100.
-   * Number of sides on a die must be between 2 and 100.
+   * /roll <rolls> <die>
+   * Rolls a die with 'die' sides 'rolls' times, or picks a number between 1 and 100 if no arguments given
    *
    * @param {Message} msg
    * @param {Array}   args
@@ -98,6 +131,7 @@ module.exports = {
   },
 
   /**
+   * /users
    * Responds with a list of the users in the current channel
    *
    * @param {Message} msg

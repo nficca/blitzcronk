@@ -26,6 +26,9 @@ module.exports = (msg, command, args) => {
     case 'gifr':
       execute_command = general.gifr;
       break;
+    case 'help':
+      execute_command = general.help;
+      break;
     case 'ping':
       execute_command = general.ping;
       break;
