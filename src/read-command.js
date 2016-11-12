@@ -21,6 +21,10 @@ module.exports = function(command, args, user, userId, channelId, event) {
       break;
     case 'echo':
       execute_command = general.echo;
+      break;
+    case 'users':
+      execute_command = general.users;
+      break;
   }
 
   if (execute_command) execute_command(props);

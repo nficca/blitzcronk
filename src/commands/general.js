@@ -1,4 +1,5 @@
-var bot = require('../bot');
+var bot = require('../bot'),
+    _ = require('lodash');
 
 module.exports = {
   ping: function(props) {
@@ -12,6 +13,14 @@ module.exports = {
     bot.sendMessage({
       to: props.channelId,
       message: props.args.join(' ')
+    });
+  },
+
+  users: function(props) {
+    let userList = _.map(bot.users, 'username');
+    bot.sendMessage({
+      to: props.channelId,
+      message: userList.join(', ')
     });
   }
 };
