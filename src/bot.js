@@ -21,13 +21,13 @@ bot.on('ready', () => {
 bot.on('message', (message) => {
 
   var prefix_regex      = new RegExp('^' + command_prefix + '[a-zA-Z0-9_]+');
-  var components_regex  = new RegExp('\\w+|"(?:\\\\"|[^"])+"', 'g');
+  var components_regex  = new RegExp('[^ ]+|"(?:\\\\"|[^"])+"', 'g');
 
   // check if the message starts with the command prefix
   if (prefix_regex.test(message.content)) {
 
     // split the message into components
-    var message_components = message.content.match(components_regex);
+    var message_components = message.content.substring(1).match(components_regex);
 
     // remove double-quotes from args
     for (let i = 0; i < message_components.length; ++i) {
