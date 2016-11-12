@@ -9,7 +9,7 @@ var general = require('./commands/general');
  * @param {String}  command
  * @param {Array}   args
  */
-module.exports = function(msg, command, args) {
+module.exports = (msg, command, args) => {
 
   var execute_command = null;
 

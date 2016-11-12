@@ -8,7 +8,7 @@ module.exports = {
    * @param {Message} msg
    * @param {Array}   args
    */
-  ping: function(msg, args) {
+  ping: (msg, args) => {
     msg.channel.sendMessage('pong!');
   },
 
@@ -18,7 +18,7 @@ module.exports = {
    * @param {Message} msg
    * @param {Array}   args
    */
-  echo: function(msg, args) {
+  echo: (msg, args) => {
     msg.channel.sendMessage(args.join(' '));
   },
 
@@ -28,8 +28,8 @@ module.exports = {
    * @param {Message} msg
    * @param {Array}   args
    */
-  users: function(msg, args) {
-    let user_list = msg.channel.members.map(function(member) {
+  users: (msg, args) => {
+    let user_list = msg.channel.members.map(member => {
       return member.user.username;
     });
     msg.channel.sendMessage(user_list.join(', '));
