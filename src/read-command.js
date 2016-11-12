@@ -2,16 +2,14 @@
 // -------
 var general = require('./commands/general');
 
-var bot = require('./bot');
-
-module.exports = function(command, args, user, userId, channelId, event) {
-  var props = {
-    args: args,
-    user: user,
-    userId: userId,
-    channelId: channelId,
-    event: event
-  };
+/**
+ * Reads a command and determines which command function to run
+ *
+ * @param {Message} msg
+ * @param {String}  command
+ * @param {Array}   args
+ */
+module.exports = function(msg, command, args) {
 
   var execute_command = null;
 
@@ -27,5 +25,5 @@ module.exports = function(command, args, user, userId, channelId, event) {
       break;
   }
 
-  if (execute_command) execute_command(props);
+  if (execute_command) execute_command(msg, args);
 };

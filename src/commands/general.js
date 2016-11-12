@@ -1,26 +1,37 @@
-var bot = require('../bot'),
-    _ = require('lodash');
-
+/**
+ * General commands
+ */
 module.exports = {
-  ping: function(props) {
-    bot.sendMessage({
-      to: props.channelId,
-      message: 'pong!'
-    });
+  /**
+   * Responds with 'pong!'
+   *
+   * @param {Message} msg
+   * @param {Array}   args
+   */
+  ping: function(msg, args) {
+    msg.channel.sendMessage('pong!');
   },
 
-  echo: function(props) {
-    bot.sendMessage({
-      to: props.channelId,
-      message: props.args.join(' ')
-    });
+  /**
+   * Echoes the a text copy of the arguments
+   *
+   * @param {Message} msg
+   * @param {Array}   args
+   */
+  echo: function(msg, args) {
+    msg.channel.sendMessage(args.join(' '));
   },
 
-  users: function(props) {
-    let userList = _.map(bot.users, 'username');
-    bot.sendMessage({
-      to: props.channelId,
-      message: userList.join(', ')
+  /**
+   * Responds with a list of the users in the current channel
+   *
+   * @param {Message} msg
+   * @param {Array}   args
+   */
+  users: function(msg, args) {
+    let user_list = msg.channel.members.map(function(member) {
+      return member.user.username;
     });
+    msg.channel.sendMessage(user_list.join(', '));
   }
 };
