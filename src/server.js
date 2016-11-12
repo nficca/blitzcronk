@@ -1,7 +1,7 @@
 var read_command = require('./read-command'),
     bot = require('./bot');
 
-// TODO: Retreive this from some customizable external source, i.e. ini file
+// TODO: Retrieve this from some customizable external source, i.e. ini file
 var command_prefix = '/';
 
 // Sanity message
