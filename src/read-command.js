@@ -25,5 +25,9 @@ module.exports = (msg, command, args) => {
       break;
   }
 
-  if (execute_command) execute_command(msg, args);
+  if (execute_command) {
+    execute_command(msg, args);
+  } else {
+    msg.channel.sendMessage("Sorry, `" + command + "` is not a command. Typo?");
+  }
 };
