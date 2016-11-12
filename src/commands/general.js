@@ -42,6 +42,22 @@ module.exports = {
   },
 
   /**
+   * Searches giphy for a random gif that matches the query
+   *
+   * @param {Message} msg
+   * @param {Array}   args
+   */
+  gifr: (msg, args) => {
+    giphy.search(args.join(' '), (err, res) => {
+      if (!err && res.data.length) {
+        msg.channel.sendMessage(random.element(res.data).url);
+      } else {
+        msg.channel.sendMessage('Your search didn\'t yield any results! :sob:');
+      }
+    });
+  },
+
+  /**
    * Responds with 'pong!'
    *
    * @param {Message} msg
