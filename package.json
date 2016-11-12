@@ -9,6 +9,7 @@
   "author": "nficca",
   "license": "ISC",
   "dependencies": {
-    "discord.io": "^2.2.4"
+    "discord.io": "^2.2.4",
+    "lodash": "^4.16.6"
   }
 }
