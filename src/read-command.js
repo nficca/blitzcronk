@@ -23,6 +23,9 @@ module.exports = (msg, command, args) => {
     case 'ping':
       execute_command = general.ping;
       break;
+    case 'roll':
+      execute_command = general.roll;
+      break;
     case 'users':
       execute_command = general.users;
       break;
