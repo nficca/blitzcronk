@@ -1,7 +1,7 @@
-var random = require('../helpers/random'),
-    giphy = require('giphy-api')(),
-    _ = require('lodash'),
-    docs = require('../docs/docs.json');
+const random = require('../helpers/random'),
+      giphy = require('giphy-api')(),
+      _ = require('lodash'),
+      docs = require('../docs/docs.json');
 
 module.exports = {
   /**

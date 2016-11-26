@@ -1,10 +1,10 @@
-var gulp = require('gulp'),
-    babel = require('gulp-babel'),
-    uglify = require('gulp-uglify'),
-    nodemon = require('gulp-nodemon'),
-    jsdoc = require('gulp-jsdoc-json');
+const gulp = require('gulp'),
+        babel = require('gulp-babel'),
+        uglify = require('gulp-uglify'),
+        nodemon = require('gulp-nodemon'),
+        jsdoc = require('gulp-jsdoc-json');
 
-var paths = {
+const paths = {
     scripts: ['src/**/*.js'],
     commands: ['src/commands/**/*.js']
 };

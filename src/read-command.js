@@ -1,6 +1,6 @@
 // COMMANDS
 // -------
-var general = require('./commands/general');
+const general = require('./commands/general');
 
 /**
  * Reads a command and determines which command function to run
@@ -11,7 +11,7 @@ var general = require('./commands/general');
  */
 module.exports = (msg, command, args) => {
 
-  var execute_command = null;
+  let execute_command = null;
 
   switch(command) {
     case 'choose':
