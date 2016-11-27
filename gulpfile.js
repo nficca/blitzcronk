@@ -13,7 +13,7 @@ gulp.task('default', ['scripts', 'docs', 'start']);
 
 gulp.task('scripts', () => {
     return gulp.src(paths.scripts)
-        .pipe(babel({presets: ['es2015']})) // must use babel to convert to es2015 for uglifying
+        .pipe(babel({presets: ['es2015']}))
         .pipe(uglify())
         .pipe(gulp.dest('dist/'));
 });
