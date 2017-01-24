@@ -11,6 +11,8 @@ const paths = {
 
 gulp.task('default', ['scripts', 'docs', 'start']);
 
+gulp.task('prod', ['scripts', 'docs']);
+
 gulp.task('scripts', () => {
     return gulp.src(paths.scripts)
         .pipe(babel({presets: ['es2015']}))
