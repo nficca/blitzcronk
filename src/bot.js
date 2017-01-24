@@ -1,10 +1,11 @@
 const read_command  = require('./read-command'),
+      stats         = require('./commands/stats'),
       discord       = require('discord.js'),
-      stats         = require('./commands/stats');
+      secret        = require('../config.json').secret;
 
 const bot = new discord.Client();
 
-bot.login("MjQ2ODI3NjcxNzM5MzAxODg4.CwgTyg.vd_Vxg5d4oVNTjsxgh4xp7chFr0"); // test-bot
+bot.login(secret);
 
 // TODO: Retrieve this from some customizable external source, i.e. ini file
 const command_prefix = '/';
