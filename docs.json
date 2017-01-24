@@ -1,0 +1,1355 @@
+[
+  {
+    "comment": "",
+    "meta": {
+      "range": [
+        6,
+        43
+      ],
+      "filename": "general.js",
+      "lineno": 1,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000002",
+        "name": "random",
+        "type": "CallExpression",
+        "value": ""
+      }
+    },
+    "undocumented": true,
+    "name": "random",
+    "longname": "random",
+    "kind": "constant",
+    "scope": "global"
+  },
+  {
+    "comment": "",
+    "meta": {
+      "range": [
+        51,
+        81
+      ],
+      "filename": "general.js",
+      "lineno": 2,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000007",
+        "name": "giphy",
+        "type": "CallExpression",
+        "value": ""
+      }
+    },
+    "undocumented": true,
+    "name": "giphy",
+    "longname": "giphy",
+    "kind": "constant",
+    "scope": "global"
+  },
+  {
+    "comment": "",
+    "meta": {
+      "range": [
+        89,
+        110
+      ],
+      "filename": "general.js",
+      "lineno": 3,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000013",
+        "name": "_",
+        "type": "CallExpression",
+        "value": ""
+      }
+    },
+    "undocumented": true,
+    "name": "_",
+    "longname": "_",
+    "kind": "constant",
+    "scope": "global"
+  },
+  {
+    "comment": "",
+    "meta": {
+      "range": [
+        118,
+        151
+      ],
+      "filename": "general.js",
+      "lineno": 4,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000018",
+        "name": "docs",
+        "type": "CallExpression",
+        "value": ""
+      }
+    },
+    "undocumented": true,
+    "name": "docs",
+    "longname": "docs",
+    "kind": "constant",
+    "scope": "global"
+  },
+  {
+    "comment": "",
+    "meta": {
+      "range": [
+        154,
+        3534
+      ],
+      "filename": "general.js",
+      "lineno": 6,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000024",
+        "name": "module.exports",
+        "type": "ObjectExpression",
+        "value": "{\"choose\":\"\",\"echo\":\"\",\"gif\":\"\",\"gifr\":\"\",\"help\":\"\",\"ping\":\"\",\"roll\":\"\",\"users\":\"\"}",
+        "paramnames": []
+      }
+    },
+    "undocumented": true,
+    "name": "exports",
+    "longname": "module.exports",
+    "kind": "member",
+    "memberof": "module",
+    "scope": "static"
+  },
+  {
+    "comment": "/**\n   * /choose <choices...>\n   * Chooses between given choices\n   *\n   * @param {Message} msg\n   * @param {Array}   args\n   */",
+    "meta": {
+      "range": [
+        306,
+        385
+      ],
+      "filename": "general.js",
+      "lineno": 14,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000029",
+        "name": "choose",
+        "type": "ArrowFunctionExpression"
+      }
+    },
+    "description": "/choose <choices...>\nChooses between given choices",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Message"
+          ]
+        },
+        "name": "msg"
+      },
+      {
+        "type": {
+          "names": [
+            "Array"
+          ]
+        },
+        "name": "args"
+      }
+    ],
+    "name": "choose",
+    "longname": "module.exports.choose",
+    "kind": "function",
+    "memberof": "module.exports",
+    "scope": "static"
+  },
+  {
+    "comment": "/**\n   * /echo <phrase>\n   * Echoes the a text copy of phrase\n   *\n   * @param {Message} msg\n   * @param {Array}   args\n   */",
+    "meta": {
+      "range": [
+        518,
+        589
+      ],
+      "filename": "general.js",
+      "lineno": 25,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000046",
+        "name": "echo",
+        "type": "ArrowFunctionExpression"
+      }
+    },
+    "description": "/echo <phrase>\nEchoes the a text copy of phrase",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Message"
+          ]
+        },
+        "name": "msg"
+      },
+      {
+        "type": {
+          "names": [
+            "Array"
+          ]
+        },
+        "name": "args"
+      }
+    ],
+    "name": "echo",
+    "longname": "module.exports.echo",
+    "kind": "function",
+    "memberof": "module.exports",
+    "scope": "static"
+  },
+  {
+    "comment": "/**\n   * /gif <query>\n   * Searches giphy for a gif that matches the query\n   *\n   * @param {Message} msg\n   * @param {Array}   args\n   */",
+    "meta": {
+      "range": [
+        735,
+        1008
+      ],
+      "filename": "general.js",
+      "lineno": 36,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000063",
+        "name": "gif",
+        "type": "ArrowFunctionExpression"
+      },
+      "vars": {
+        "": null
+      }
+    },
+    "description": "/gif <query>\nSearches giphy for a gif that matches the query",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Message"
+          ]
+        },
+        "name": "msg"
+      },
+      {
+        "type": {
+          "names": [
+            "Array"
+          ]
+        },
+        "name": "args"
+      }
+    ],
+    "name": "gif",
+    "longname": "module.exports.gif",
+    "kind": "function",
+    "memberof": "module.exports",
+    "scope": "static"
+  },
+  {
+    "comment": "/**\n   * /gifr <query>\n   * Searches giphy for a random gif that matches the query\n   *\n   * @param {Message} msg\n   * @param {Array}   args\n   */",
+    "meta": {
+      "range": [
+        1162,
+        1449
+      ],
+      "filename": "general.js",
+      "lineno": 53,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000115",
+        "name": "gifr",
+        "type": "ArrowFunctionExpression"
+      },
+      "vars": {
+        "": null
+      }
+    },
+    "description": "/gifr <query>\nSearches giphy for a random gif that matches the query",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Message"
+          ]
+        },
+        "name": "msg"
+      },
+      {
+        "type": {
+          "names": [
+            "Array"
+          ]
+        },
+        "name": "args"
+      }
+    ],
+    "name": "gifr",
+    "longname": "module.exports.gifr",
+    "kind": "function",
+    "memberof": "module.exports",
+    "scope": "static"
+  },
+  {
+    "comment": "/**\n   * /help <command>\n   * Show help for specific command, or all commands if none given\n   *\n   * @param {Message} msg\n   * @param {Array}   args\n   */",
+    "meta": {
+      "range": [
+        1612,
+        2372
+      ],
+      "filename": "general.js",
+      "lineno": 70,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000169",
+        "name": "help",
+        "type": "ArrowFunctionExpression"
+      },
+      "vars": {
+        "info": "module.exports.help~info",
+        "": null
+      }
+    },
+    "description": "/help <command>\nShow help for specific command, or all commands if none given",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Message"
+          ]
+        },
+        "name": "msg"
+      },
+      {
+        "type": {
+          "names": [
+            "Array"
+          ]
+        },
+        "name": "args"
+      }
+    ],
+    "name": "help",
+    "longname": "module.exports.help",
+    "kind": "function",
+    "memberof": "module.exports",
+    "scope": "static"
+  },
+  {
+    "comment": "",
+    "meta": {
+      "range": [
+        1643,
+        1654
+      ],
+      "filename": "general.js",
+      "lineno": 71,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000175",
+        "name": "info",
+        "type": "Literal",
+        "value": null
+      }
+    },
+    "undocumented": true,
+    "name": "info",
+    "longname": "module.exports.help~info",
+    "kind": "member",
+    "memberof": "module.exports.help",
+    "scope": "inner"
+  },
+  {
+    "comment": "",
+    "meta": {
+      "range": [
+        1686,
+        1800
+      ],
+      "filename": "general.js",
+      "lineno": 74,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000184",
+        "name": "info",
+        "type": "CallExpression",
+        "funcscope": "module.exports.help",
+        "value": "",
+        "paramnames": []
+      }
+    },
+    "undocumented": true,
+    "name": "info",
+    "longname": "module.exports.help~info",
+    "kind": "member",
+    "memberof": "module.exports.help",
+    "scope": "inner"
+  },
+  {
+    "comment": "",
+    "meta": {
+      "range": [
+        1716,
+        1729
+      ],
+      "filename": "general.js",
+      "lineno": 75,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000192",
+        "name": "name",
+        "type": "MemberExpression",
+        "value": "args[0]"
+      }
+    },
+    "undocumented": true,
+    "name": "name",
+    "longname": "name",
+    "kind": "member",
+    "scope": "global"
+  },
+  {
+    "comment": "",
+    "meta": {
+      "range": [
+        1739,
+        1755
+      ],
+      "filename": "general.js",
+      "lineno": 76,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000196",
+        "name": "kind",
+        "type": "Literal",
+        "value": "function"
+      }
+    },
+    "undocumented": true,
+    "name": "kind",
+    "longname": "kind",
+    "kind": "member",
+    "scope": "global"
+  },
+  {
+    "comment": "",
+    "meta": {
+      "range": [
+        1765,
+        1791
+      ],
+      "filename": "general.js",
+      "lineno": 77,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000198",
+        "name": "memberof",
+        "type": "Literal",
+        "value": "module.exports"
+      }
+    },
+    "undocumented": true,
+    "name": "memberof",
+    "longname": "memberof",
+    "kind": "member",
+    "scope": "global"
+  },
+  {
+    "comment": "",
+    "meta": {
+      "range": [
+        2053,
+        2062
+      ],
+      "filename": "general.js",
+      "lineno": 85,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000242",
+        "name": "info",
+        "type": "Literal",
+        "funcscope": "module.exports.help",
+        "value": "",
+        "paramnames": []
+      }
+    },
+    "undocumented": true,
+    "name": "info",
+    "longname": "module.exports.help~info",
+    "kind": "member",
+    "memberof": "module.exports.help",
+    "scope": "inner"
+  },
+  {
+    "comment": "",
+    "meta": {
+      "range": [
+        2095,
+        2111
+      ],
+      "filename": "general.js",
+      "lineno": 87,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000254",
+        "name": "kind",
+        "type": "Literal",
+        "value": "function"
+      }
+    },
+    "undocumented": true,
+    "name": "kind",
+    "longname": "kind",
+    "kind": "member",
+    "scope": "global"
+  },
+  {
+    "comment": "",
+    "meta": {
+      "range": [
+        2121,
+        2147
+      ],
+      "filename": "general.js",
+      "lineno": 88,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000256",
+        "name": "memberof",
+        "type": "Literal",
+        "value": "module.exports"
+      }
+    },
+    "undocumented": true,
+    "name": "memberof",
+    "longname": "memberof",
+    "kind": "member",
+    "scope": "global"
+  },
+  {
+    "comment": "",
+    "meta": {
+      "range": [
+        2242,
+        2274
+      ],
+      "filename": "general.js",
+      "lineno": 91,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000272",
+        "name": "info",
+        "type": "BinaryExpression",
+        "funcscope": "<anonymous>",
+        "value": "",
+        "paramnames": []
+      }
+    },
+    "undocumented": true,
+    "name": "info",
+    "longname": "<anonymous>~info",
+    "kind": "member",
+    "memberof": "<anonymous>",
+    "scope": "inner"
+  },
+  {
+    "comment": "/**\n   * /ping\n   * Responds with 'pong!'\n   *\n   * @param {Message} msg\n   * @param {Array}   args\n   */",
+    "meta": {
+      "range": [
+        2485,
+        2549
+      ],
+      "filename": "general.js",
+      "lineno": 106,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000291",
+        "name": "ping",
+        "type": "ArrowFunctionExpression"
+      }
+    },
+    "description": "/ping\nResponds with 'pong!'",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Message"
+          ]
+        },
+        "name": "msg"
+      },
+      {
+        "type": {
+          "names": [
+            "Array"
+          ]
+        },
+        "name": "args"
+      }
+    ],
+    "name": "ping",
+    "longname": "module.exports.ping",
+    "kind": "function",
+    "memberof": "module.exports",
+    "scope": "static"
+  },
+  {
+    "comment": "/**\n   * /roll <rolls> <die>\n   * Rolls a die with 'die' sides 'rolls' times, or picks a number between 1 and 100 if no arguments given\n   *\n   * @param {Message} msg\n   * @param {Array}   args\n   */",
+    "meta": {
+      "range": [
+        2756,
+        3206
+      ],
+      "filename": "general.js",
+      "lineno": 117,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000304",
+        "name": "roll",
+        "type": "ArrowFunctionExpression"
+      },
+      "vars": {
+        "result": "module.exports.roll~result",
+        "rolls": "module.exports.roll~rolls",
+        "die": "module.exports.roll~die",
+        "i": "module.exports.roll~i"
+      }
+    },
+    "description": "/roll <rolls> <die>\nRolls a die with 'die' sides 'rolls' times, or picks a number between 1 and 100 if no arguments given",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Message"
+          ]
+        },
+        "name": "msg"
+      },
+      {
+        "type": {
+          "names": [
+            "Array"
+          ]
+        },
+        "name": "args"
+      }
+    ],
+    "name": "roll",
+    "longname": "module.exports.roll",
+    "kind": "function",
+    "memberof": "module.exports",
+    "scope": "static"
+  },
+  {
+    "comment": "",
+    "meta": {
+      "range": [
+        2787,
+        2814
+      ],
+      "filename": "general.js",
+      "lineno": 118,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000310",
+        "name": "result",
+        "type": "CallExpression",
+        "value": ""
+      }
+    },
+    "undocumented": true,
+    "name": "result",
+    "longname": "module.exports.roll~result",
+    "kind": "member",
+    "memberof": "module.exports.roll",
+    "scope": "inner"
+  },
+  {
+    "comment": "",
+    "meta": {
+      "range": [
+        2878,
+        2903
+      ],
+      "filename": "general.js",
+      "lineno": 122,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000326",
+        "name": "rolls",
+        "type": "CallExpression",
+        "value": ""
+      }
+    },
+    "undocumented": true,
+    "name": "rolls",
+    "longname": "module.exports.roll~rolls",
+    "kind": "member",
+    "memberof": "module.exports.roll",
+    "scope": "inner"
+  },
+  {
+    "comment": "",
+    "meta": {
+      "range": [
+        2915,
+        2938
+      ],
+      "filename": "general.js",
+      "lineno": 123,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000334",
+        "name": "die",
+        "type": "CallExpression",
+        "value": ""
+      }
+    },
+    "undocumented": true,
+    "name": "die",
+    "longname": "module.exports.roll~die",
+    "kind": "member",
+    "memberof": "module.exports.roll",
+    "scope": "inner"
+  },
+  {
+    "comment": "",
+    "meta": {
+      "range": [
+        3014,
+        3024
+      ],
+      "filename": "general.js",
+      "lineno": 125,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000359",
+        "name": "result",
+        "type": "Literal",
+        "funcscope": "module.exports.roll",
+        "value": 0,
+        "paramnames": []
+      }
+    },
+    "undocumented": true,
+    "name": "result",
+    "longname": "module.exports.roll~result",
+    "kind": "member",
+    "memberof": "module.exports.roll",
+    "scope": "inner"
+  },
+  {
+    "comment": "",
+    "meta": {
+      "range": [
+        3043,
+        3048
+      ],
+      "filename": "general.js",
+      "lineno": 126,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000364",
+        "name": "i",
+        "type": "Literal",
+        "value": 1
+      }
+    },
+    "undocumented": true,
+    "name": "i",
+    "longname": "module.exports.roll~i",
+    "kind": "member",
+    "memberof": "module.exports.roll",
+    "scope": "inner"
+  },
+  {
+    "comment": "",
+    "meta": {
+      "range": [
+        3080,
+        3108
+      ],
+      "filename": "general.js",
+      "lineno": 127,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000374",
+        "name": "result",
+        "type": "CallExpression",
+        "funcscope": "module.exports.roll",
+        "value": "",
+        "paramnames": []
+      }
+    },
+    "undocumented": true,
+    "name": "result",
+    "longname": "module.exports.roll~result",
+    "kind": "member",
+    "memberof": "module.exports.roll",
+    "scope": "inner"
+  },
+  {
+    "comment": "/**\n   * /users\n   * Responds with a list of the users in the current channel\n   *\n   * @param {Message} msg\n   * @param {Array}   args\n   */",
+    "meta": {
+      "range": [
+        3355,
+        3532
+      ],
+      "filename": "general.js",
+      "lineno": 142,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000399",
+        "name": "users",
+        "type": "ArrowFunctionExpression"
+      },
+      "vars": {
+        "user_list": "module.exports.users~user_list",
+        "": null
+      }
+    },
+    "description": "/users\nResponds with a list of the users in the current channel",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Message"
+          ]
+        },
+        "name": "msg"
+      },
+      {
+        "type": {
+          "names": [
+            "Array"
+          ]
+        },
+        "name": "args"
+      }
+    ],
+    "name": "users",
+    "longname": "module.exports.users",
+    "kind": "function",
+    "memberof": "module.exports",
+    "scope": "static"
+  },
+  {
+    "comment": "",
+    "meta": {
+      "range": [
+        3387,
+        3476
+      ],
+      "filename": "general.js",
+      "lineno": 143,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000405",
+        "name": "user_list",
+        "type": "CallExpression",
+        "value": ""
+      }
+    },
+    "undocumented": true,
+    "name": "user_list",
+    "longname": "module.exports.users~user_list",
+    "kind": "member",
+    "memberof": "module.exports.users",
+    "scope": "inner"
+  },
+  {
+    "comment": "",
+    "meta": {
+      "range": [
+        6,
+        31
+      ],
+      "filename": "stats.js",
+      "lineno": 1,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000438",
+        "name": "_",
+        "type": "CallExpression",
+        "value": ""
+      }
+    },
+    "undocumented": true,
+    "name": "_",
+    "longname": "_",
+    "kind": "constant",
+    "scope": "global"
+  },
+  {
+    "comment": "",
+    "meta": {
+      "range": [
+        40,
+        65
+      ],
+      "filename": "stats.js",
+      "lineno": 2,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000443",
+        "name": "loki",
+        "type": "CallExpression",
+        "value": ""
+      }
+    },
+    "undocumented": true,
+    "name": "loki",
+    "longname": "loki",
+    "kind": "constant",
+    "scope": "global"
+  },
+  {
+    "comment": "",
+    "meta": {
+      "range": [
+        93,
+        117
+      ],
+      "filename": "stats.js",
+      "lineno": 5,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000449",
+        "name": "db",
+        "type": "NewExpression",
+        "value": ""
+      }
+    },
+    "undocumented": true,
+    "name": "db",
+    "longname": "db",
+    "kind": "member",
+    "scope": "global"
+  },
+  {
+    "comment": "",
+    "meta": {
+      "range": [
+        126,
+        504
+      ],
+      "filename": "stats.js",
+      "lineno": 7,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000455",
+        "name": "loadCollection",
+        "type": "ArrowFunctionExpression"
+      },
+      "vars": {
+        "": null
+      }
+    },
+    "undocumented": true,
+    "name": "loadCollection",
+    "longname": "loadCollection",
+    "kind": "function",
+    "scope": "global"
+  },
+  {
+    "comment": "",
+    "meta": {
+      "range": [
+        211,
+        246
+      ],
+      "filename": "stats.js",
+      "lineno": 9,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000470",
+        "name": "collection",
+        "type": "CallExpression",
+        "value": ""
+      }
+    },
+    "undocumented": true,
+    "name": "collection",
+    "longname": "<anonymous>~collection",
+    "kind": "member",
+    "memberof": "<anonymous>",
+    "scope": "inner"
+  },
+  {
+    "comment": "",
+    "meta": {
+      "range": [
+        382,
+        417
+      ],
+      "filename": "stats.js",
+      "lineno": 13,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000491",
+        "name": "collection",
+        "type": "CallExpression",
+        "funcscope": "<anonymous>",
+        "value": "",
+        "paramnames": []
+      }
+    },
+    "undocumented": true,
+    "name": "collection",
+    "longname": "<anonymous>~collection",
+    "kind": "member",
+    "memberof": "<anonymous>",
+    "scope": "inner"
+  },
+  {
+    "comment": "",
+    "meta": {
+      "range": [
+        509,
+        2069
+      ],
+      "filename": "stats.js",
+      "lineno": 22,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000508",
+        "name": "module.exports",
+        "type": "ObjectExpression",
+        "value": "{\"countMsg\":\"\",\"chatters\":\"\"}",
+        "paramnames": []
+      }
+    },
+    "undocumented": true,
+    "name": "exports",
+    "longname": "module.exports",
+    "kind": "member",
+    "memberof": "module",
+    "scope": "static"
+  },
+  {
+    "comment": "/**\r\n     * [hide]\r\n     * Counts a message for the database\r\n     *\r\n     * @param {Message} msg\r\n     */",
+    "meta": {
+      "range": [
+        645,
+        1412
+      ],
+      "filename": "stats.js",
+      "lineno": 29,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000513",
+        "name": "countMsg",
+        "type": "ArrowFunctionExpression"
+      },
+      "vars": {
+        "author": "module.exports.countMsg~author",
+        "": null
+      }
+    },
+    "description": "[hide]\rCounts a message for the database",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Message"
+          ]
+        },
+        "name": "msg"
+      }
+    ],
+    "name": "countMsg",
+    "longname": "module.exports.countMsg",
+    "kind": "function",
+    "memberof": "module.exports",
+    "scope": "static"
+  },
+  {
+    "comment": "",
+    "meta": {
+      "range": [
+        679,
+        709
+      ],
+      "filename": "stats.js",
+      "lineno": 30,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000518",
+        "name": "author",
+        "type": "CallExpression",
+        "value": ""
+      }
+    },
+    "undocumented": true,
+    "name": "author",
+    "longname": "module.exports.countMsg~author",
+    "kind": "member",
+    "memberof": "module.exports.countMsg",
+    "scope": "inner"
+  },
+  {
+    "comment": "",
+    "meta": {
+      "range": [
+        776,
+        818
+      ],
+      "filename": "stats.js",
+      "lineno": 33,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000534",
+        "name": "result",
+        "type": "CallExpression",
+        "value": ""
+      }
+    },
+    "undocumented": true,
+    "name": "result",
+    "longname": "<anonymous>~result",
+    "kind": "member",
+    "memberof": "<anonymous>",
+    "scope": "inner"
+  },
+  {
+    "comment": "",
+    "meta": {
+      "range": [
+        800,
+        816
+      ],
+      "filename": "stats.js",
+      "lineno": 33,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000541",
+        "name": "author",
+        "type": "Identifier",
+        "value": "author"
+      }
+    },
+    "undocumented": true,
+    "name": "author",
+    "longname": "author",
+    "kind": "member",
+    "scope": "global"
+  },
+  {
+    "comment": "",
+    "meta": {
+      "range": [
+        1011,
+        1027
+      ],
+      "filename": "stats.js",
+      "lineno": 37,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000568",
+        "name": "author",
+        "type": "Identifier",
+        "value": "author"
+      }
+    },
+    "undocumented": true,
+    "name": "author",
+    "longname": "author",
+    "kind": "member",
+    "scope": "global"
+  },
+  {
+    "comment": "",
+    "meta": {
+      "range": [
+        1050,
+        1069
+      ],
+      "filename": "stats.js",
+      "lineno": 38,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000570",
+        "name": "total_messages",
+        "type": "Literal",
+        "value": 1
+      }
+    },
+    "undocumented": true,
+    "name": "total_messages",
+    "longname": "total_messages",
+    "kind": "member",
+    "scope": "global"
+  },
+  {
+    "comment": "",
+    "meta": {
+      "range": [
+        1291,
+        1316
+      ],
+      "filename": "stats.js",
+      "lineno": 44,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000594",
+        "name": "result.total_messages",
+        "type": "Literal",
+        "funcscope": "<anonymous>",
+        "value": 1,
+        "paramnames": []
+      }
+    },
+    "undocumented": true,
+    "name": "total_messages",
+    "longname": "<anonymous>~result.total_messages",
+    "kind": "member",
+    "memberof": "<anonymous>~result",
+    "scope": "static"
+  },
+  {
+    "comment": "/**\r\n     * /chatters\r\n     * Gets the top 10 chatters in the server\r\n     *\r\n     * @param {Message} msg\r\n     * @param {Array}   args\r\n     */",
+    "meta": {
+      "range": [
+        1571,
+        2066
+      ],
+      "filename": "stats.js",
+      "lineno": 59,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000605",
+        "name": "chatters",
+        "type": "ArrowFunctionExpression"
+      },
+      "vars": {
+        "": null
+      }
+    },
+    "description": "/chatters\rGets the top 10 chatters in the server",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Message"
+          ]
+        },
+        "name": "msg"
+      },
+      {
+        "type": {
+          "names": [
+            "Array"
+          ]
+        },
+        "name": "args"
+      }
+    ],
+    "name": "chatters",
+    "longname": "module.exports.chatters",
+    "kind": "function",
+    "memberof": "module.exports",
+    "scope": "static"
+  },
+  {
+    "comment": "",
+    "meta": {
+      "range": [
+        1661,
+        1743
+      ],
+      "filename": "stats.js",
+      "lineno": 61,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000618",
+        "name": "results",
+        "type": "CallExpression",
+        "value": ""
+      }
+    },
+    "undocumented": true,
+    "name": "results",
+    "longname": "<anonymous>~results",
+    "kind": "member",
+    "memberof": "<anonymous>",
+    "scope": "inner"
+  },
+  {
+    "comment": "",
+    "meta": {
+      "range": [
+        1762,
+        1813
+      ],
+      "filename": "stats.js",
+      "lineno": 62,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000640",
+        "name": "result_msg",
+        "type": "Literal",
+        "value": "The top chatters in this server are:"
+      }
+    },
+    "undocumented": true,
+    "name": "result_msg",
+    "longname": "<anonymous>~result_msg",
+    "kind": "member",
+    "memberof": "<anonymous>",
+    "scope": "inner"
+  },
+  {
+    "comment": "",
+    "meta": {
+      "range": [
+        1837,
+        1842
+      ],
+      "filename": "stats.js",
+      "lineno": 63,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000645",
+        "name": "i",
+        "type": "Literal",
+        "value": 1
+      }
+    },
+    "undocumented": true,
+    "name": "i",
+    "longname": "<anonymous>~i",
+    "kind": "member",
+    "memberof": "<anonymous>",
+    "scope": "inner"
+  },
+  {
+    "comment": "",
+    "meta": {
+      "range": [
+        1889,
+        1981
+      ],
+      "filename": "stats.js",
+      "lineno": 64,
+      "path": "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands",
+      "code": {
+        "id": "astnode100000657",
+        "name": "result_msg",
+        "type": "TemplateLiteral",
+        "funcscope": "<anonymous>",
+        "value": "",
+        "paramnames": []
+      }
+    },
+    "undocumented": true,
+    "name": "result_msg",
+    "longname": "<anonymous>~result_msg",
+    "kind": "member",
+    "memberof": "<anonymous>",
+    "scope": "inner"
+  },
+  {
+    "kind": "package",
+    "longname": "package:undefined",
+    "files": [
+      "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands\\general.js",
+      "C:\\Users\\nficca\\Documents\\Dev\\blitzcronk\\src\\commands\\stats.js"
+    ]
+  }
+]

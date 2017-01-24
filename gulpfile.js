@@ -23,7 +23,7 @@ gulp.task('scripts', function() {
 gulp.task('docs', function() {
     return gulp.src(paths.commands)
         .pipe(jsdoc({output: 'docs.json'}))
-        .pipe(gulp.dest('dist/docs/'));
+        .pipe(gulp.dest('.'));
 });
 
 gulp.task('start', function() {
