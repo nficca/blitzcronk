@@ -1,5 +1,6 @@
-const read_command = require('./read-command'),
-      discord = require('discord.js');
+const read_command  = require('./read-command'),
+      discord       = require('discord.js'),
+      stats         = require('./commands/stats');
 
 const bot = new discord.Client();
 
@@ -19,6 +20,8 @@ bot.on('ready', () => {
  * Handles all incoming messages and parses them for a command
  */
 bot.on('message', (message) => {
+
+  stats.countMsg(message)
 
   let prefix_regex      = new RegExp('^' + command_prefix + '[a-zA-Z0-9_]+');
   let components_regex  = new RegExp('[^ ]+|"(?:\\\\"|[^"])+"', 'g');

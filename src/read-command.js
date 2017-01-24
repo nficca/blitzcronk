@@ -1,6 +1,7 @@
 // COMMANDS
 // -------
 const general = require('./commands/general');
+const stats   = require('./commands/stats');
 
 /**
  * Reads a command and determines which command function to run
@@ -37,6 +38,9 @@ module.exports = (msg, command, args) => {
       break;
     case 'users':
       execute_command = general.users;
+      break;
+    case 'chatters':
+      execute_command = stats.chatters;
       break;
   }
 

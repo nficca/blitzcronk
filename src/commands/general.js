@@ -76,7 +76,7 @@ module.exports = {
         kind: 'function',
         memberof: 'module.exports'
       });
-      if (info) {
+      if (info && /^[^(\[hide\])]/.test(info.description)) {
         msg.channel.sendMessage('```' + info.description + '```');
       } else {
         msg.channel.sendMessage('There is no `' + args[0] + '` command! :sob:');
@@ -87,7 +87,9 @@ module.exports = {
         kind: 'function',
         memberof: 'module.exports'
       }).forEach((doc) => {
-        info += doc.description + '\n\n';
+        if (/^[^(\[hide\])]/.test(doc.description)) {
+            info += doc.description + '\n\n';
+        }
       });
 
       msg.channel.sendMessage('```Commands:\n\n' + info + '```');
