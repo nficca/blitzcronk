@@ -15,8 +15,6 @@ let loadCollection = (name, callback) => {
 
         callback(collection);
     });
-
-    db.saveDatabase();
 };
 
 module.exports = {
@@ -46,6 +44,8 @@ module.exports = {
 
                 users.update(result);
             }
+
+            db.saveDatabase();
         });
     },
 
