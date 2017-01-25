@@ -15,6 +15,7 @@ module.exports = (msg, command, args) => {
   let execute_command = null;
 
   switch(command) {
+    // General Commands
     case 'choose':
       execute_command = general.choose;
       break;
@@ -39,8 +40,13 @@ module.exports = (msg, command, args) => {
     case 'users':
       execute_command = general.users;
       break;
+
+    // Stats Commands
     case 'chatters':
       execute_command = stats.chatters;
+      break;
+    case 'stats':
+      execute_command = stats.stats;
       break;
   }
 
