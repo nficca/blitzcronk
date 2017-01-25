@@ -25,7 +25,7 @@ let calcLevel = (total_messages) => {
 };
 
 let getProfanities = (message) => {
-    let words = message.split(' ');
+    let words = message.toLowerCase().split(' ');
     let profanity_types = [];
     let profanity_counts = {};
 
