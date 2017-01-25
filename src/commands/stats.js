@@ -1,5 +1,6 @@
 const _     = require('lodash'),
-      loki  = require('lokijs');
+      loki  = require('lokijs'),
+      profanity = require('../../profanity.json');
 
 // Initialization
 let db = new loki('db.json');
@@ -23,6 +24,69 @@ let calcLevel = (total_messages) => {
     ));
 };
 
+let getProfanities = (message) => {
+    let words = message.split(' ');
+    let profanity_types = [];
+    let profanity_counts = {};
+
+    let obj = null;
+    for (let i = 0; i < words.length; ++i) {
+        // Check if current obj has next
+        if (obj != null && obj.next) {
+
+            // Check if current word follows last word
+            if (_.get(obj, 'next.' + words[i])) {
+                // current word follows, point to current word
+                obj = obj.next[words[i]];
+            }
+            // doesn't follow, but check if it's a profanity
+            else if (profanity[words[i]]) {
+                // check if last word was a profanity by itself
+                if (obj != null && obj.type != null) {
+                    profanity_types = profanity_types.concat(obj.type);
+                }
+                // point to current word because it's a profanity
+                obj = profanity[words[i]]
+            }
+            // current word is not a profanity and doesn't follow
+            else {
+                if (obj.type != null) profanity_types = profanity_types.concat(obj.type);
+                obj = null;
+            }
+        }
+        // is current word a profanity
+        else if (profanity[words[i]]) {
+            // check if last word was a profanity by itself
+            if (obj != null && obj.type != null) {
+                profanity_types = profanity_types.concat(obj.type);
+            }
+            // point to current word because it's a profanity
+            obj = profanity[words[i]];
+        }
+        // current is not a profanity, check if last word was
+        else if (obj != null) {
+            if (obj.type != null) profanity_types = profanity_types.concat(obj.type);
+            obj = null;
+        }
+    }
+
+    // check if last word in message was a profanity
+    if (obj != null && obj.type != null) {
+        profanity_types = profanity_types.concat(obj.type);
+    }
+
+    for (let i = 0; i < profanity_types.length; ++i) {
+        if (!profanity_counts[profanity_types[i]]) {
+            profanity_counts[profanity_types[i]] = 1;
+        } else {
+            profanity_counts[profanity_types[i]]++;
+        }
+    }
+
+    return profanity_counts;
+};
+
+
 module.exports = {
     /**
      * [hide]
@@ -33,6 +97,8 @@ module.exports = {
     countMsg: (msg) => {
         let author = msg.author.toString();
 
+        let profanity_use = getProfanities(msg.content);
+
         loadCollection('users', (users) => {
             let result = users.findOne({'author': author});
             if (!result || result.length == 0) {
@@ -40,7 +106,8 @@ module.exports = {
                 users.insert({
                     'author': author,
                     'total_messages': 1,
-                    'level': 1
+                    'level': 1,
+                    'profanity': profanity_use
                 });
             } else {
                 if (_.get(result, 'total_messages') && result.total_messages > 0) {
@@ -56,6 +123,19 @@ module.exports = {
                     result.total_messages = 1;
                     result.level = 1;
                 }
+
+                if (!_.get(result, 'profanity') || typeof result.profanity !== "object") {
+                    result.profanity = {};
+                }
+
+                for (let k in profanity_use) {
+                    if (_.get(result, `profanity.${k}`)) {
+                        result.profanity[k] += profanity_use[k];
+                    } else {
+                        result.profanity[k] = profanity_use[k];
+                    }
+                }
+
 
                 users.update(result);
             }
@@ -79,7 +159,7 @@ module.exports = {
                 result_msg += `\n${i}. ${results[i - 1].author} - ${results[i - 1].total_messages} messages`;
             }
             msg.channel.sendMessage(result_msg);
-        })
+        });
     },
 
     /**
@@ -107,5 +187,38 @@ module.exports = {
                 msg.channel.sendMessage(result_msg);
             }
         })
+    },
+
+    /**
+     *  /swearjar
+     *  Lists the top 10 most vulgar users
+     *
+     * @param {Message} msg
+     * @param {Array}   args
+     */
+    swearjar: (msg, args) => {
+        loadCollection('users', (users) => {
+            let results = users.chain().find().sort((user1, user2) => {
+
+                let profanity1 = _.get(user1, 'profanity'),
+                    profanity2 = _.get(user2, 'profanity'),
+                    totals1    = _.sum(_.values(profanity1)),
+                    totals2    = _.sum(_.values(profanity2));
+
+                if (!profanity1 && !profanity2) return 0;
+                if (!profanity2) return -1;
+                if (!profanity1) return 1;
+
+                if (totals1 == totals2) return 0;
+                if (totals1 > totals2) return -1;
+                if (totals1 < totals2) return 1;
+
+            }).limit(10).data();
+            let result_msg = 'The top swearers in this server are:';
+            for (let i = 1; i <= results.length; ++i) {
+                result_msg += `\n${i}. ${results[i - 1].author} - ${_.sum(_.values(results[i - 1].profanity))} profanity points`;
+            }
+            msg.channel.sendMessage(result_msg);
+        });
     }
 };

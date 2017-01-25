@@ -48,6 +48,9 @@ module.exports = (msg, command, args) => {
     case 'stats':
       execute_command = stats.stats;
       break;
+    case 'swearjar':
+      execute_command = stats.swearjar;
+      break;
   }
 
   if (execute_command) {

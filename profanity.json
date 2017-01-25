@@ -1,0 +1,1591 @@
+{
+  "anus": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "arse": {
+    "type": ["insult"],
+    "next": null
+  },
+  "arsehole": {
+    "type": ["insult"],
+    "next": null
+  },
+  "ass": {
+    "type": ["sexual",
+      "insult"],
+    "next": null
+  },
+  "ass-hat": {
+    "type": ["insult"],
+    "next": null
+  },
+  "ass-pirate": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "assbag": {
+    "type": ["insult"],
+    "next": null
+  },
+  "assbandit": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "assbanger": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "assbite": {
+    "type": ["insult"],
+    "next": null
+  },
+  "assclown": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "asscock": {
+    "type": ["insult"],
+    "next": null
+  },
+  "asscracker": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "assface": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "assfuck": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "assfucker": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "assgoblin": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "asshat": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "asshead": {
+    "type": ["insult"],
+    "next": null
+  },
+  "asshole": {
+    "type": ["insult"],
+    "next": null
+  },
+  "asshopper": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "assjacker": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "asslick": {
+    "type": ["insult"],
+    "next": null
+  },
+  "asslicker": {
+    "type": ["insult"],
+    "next": null
+  },
+  "assmonkey": {
+    "type": ["insult"],
+    "next": null
+  },
+  "assmunch": {
+    "type": ["insult"],
+    "next": null
+  },
+  "assmuncher": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "assnigger": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "asspirate": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "assshit": {
+    "type": ["insult"],
+    "next": null
+  },
+  "assshole": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "asssucker": {
+    "type": ["insult"],
+    "next": null
+  },
+  "asswad": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "asswipe": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "bampot": {
+    "type": ["insult"],
+    "next": null
+  },
+  "bastard": {
+    "type": ["insult"],
+    "next": null
+  },
+  "beaner": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "beastial": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "beastiality": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "beastility": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "bestial": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "bestiality": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "bitch": {
+    "type": ["insult"],
+    "next": null
+  },
+  "bitchass": {
+    "type": ["insult"],
+    "next": null
+  },
+  "bitcher": {
+    "type": ["insult"],
+    "next": null
+  },
+  "bitchin": {
+    "type": ["inappropriate"],
+    "next": null
+  },
+  "bitching": {
+    "type": ["inappropriate"],
+    "next": null
+  },
+  "bitchtit": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "bitchy": {
+    "type": ["insult"],
+    "next": null
+  },
+  "blow job": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "blowjob": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "bollocks": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "bollox": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "boner": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "bullshit": {
+    "type": ["inappropriate"],
+    "next": null
+  },
+  "butt plug": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "camel toe": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "choad": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "chode": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "clit": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "clitface": {
+    "type": ["insult"],
+    "next": null
+  },
+  "clitfuck": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "clusterfuck": {
+    "type": ["inappropriate"],
+    "next": null
+  },
+  "cock": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "cockbite": {
+    "type": ["insult"],
+    "next": null
+  },
+  "cockburger": {
+    "type": ["insult"],
+    "next": null
+  },
+  "cockface": {
+    "type": ["insult"],
+    "next": null
+  },
+  "cockfucker": {
+    "type": ["insult"],
+    "next": null
+  },
+  "cockhead": {
+    "type": ["insult"],
+    "next": null
+  },
+  "cockmonkey": {
+    "type": ["insult"],
+    "next": null
+  },
+  "cocknose": {
+    "type": ["insult"],
+    "next": null
+  },
+  "cocknugget": {
+    "type": ["insult"],
+    "next": null
+  },
+  "cockshit": {
+    "type": ["insult"],
+    "next": null
+  },
+  "cocksuck": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "cocksucked": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "cocksucker": {
+    "type": ["discriminatory",
+      "sexual"],
+    "next": null
+  },
+  "cocksucking": {
+    "type": ["sexual",
+      "discriminatory"],
+    "next": null
+  },
+  "cocksucks": {
+    "type": ["sexual",
+      "discriminatory"],
+    "next": null
+  },
+  "coochie": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "coochy": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "cooter": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "cum": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "cumbubble": {
+    "type": ["insult"],
+    "next": null
+  },
+  "cumdumpster": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "cummer": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "cumming": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "cumshot": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "cumslut": {
+    "type": ["sexual",
+      "insult"],
+    "next": null
+  },
+  "cumtart": {
+    "type": ["insult"],
+    "next": null
+  },
+  "cunillingus": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "cunnie": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "cunnilingus": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "cunt": {
+    "type": ["insult",
+      "sexual"],
+    "next": null
+  },
+  "cuntface": {
+    "type": ["insult"],
+    "next": null
+  },
+  "cunthole": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "cuntlick": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "cuntlicker": {
+    "type": ["sexual",
+      "discriminatory"],
+    "next": null
+  },
+  "cuntlicking": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "cuntrag": {
+    "type": ["insult"],
+    "next": null
+  },
+  "cuntslut": {
+    "type": ["insult"],
+    "next": null
+  },
+  "cyberfuc": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "cyberfuck": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "cyberfucked": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "cyberfucker": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "cyberfucking": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "dago": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "damn": {
+    "type": ["inappropriate"],
+    "next": null
+  },
+  "deggo": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "dick": {
+    "type": ["sexual",
+      "insult"],
+    "next": null
+  },
+  "dickbag": {
+    "type": ["insult"],
+    "next": null
+  },
+  "dickbeaters": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "dickface": {
+    "type": ["insult"],
+    "next": null
+  },
+  "dickfuck": {
+    "type": ["insult"],
+    "next": null
+  },
+  "dickhead": {
+    "type": ["insult"],
+    "next": null
+  },
+  "dickhole": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "dickjuice": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "dickmilk": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "dickslap": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "dickwad": {
+    "type": ["insult"],
+    "next": null
+  },
+  "dickweasel": {
+    "type": ["insult"],
+    "next": null
+  },
+  "dickweed": {
+    "type": ["insult"],
+    "next": null
+  },
+  "dickwod": {
+    "type": ["insult"],
+    "next": null
+  },
+  "dildo": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "dink": {
+    "type": ["insult",
+      "sexual"],
+    "next": null
+  },
+  "dipshit": {
+    "type": ["insult"],
+    "next": null
+  },
+  "doochbag": {
+    "type": ["insult"],
+    "next": null
+  },
+  "dookie": {
+    "type": ["inappropriate"],
+    "next": null
+  },
+  "douche": {
+    "type": ["insult"],
+    "next": null
+  },
+  "douche-fag": {
+    "type": ["insult"],
+    "next": null
+  },
+  "douchebag": {
+    "type": ["insult"],
+    "next": null
+  },
+  "douchewaffle": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "dumass": {
+    "type": ["insult"],
+    "next": null
+  },
+  "dumb ass": {
+    "type": ["insult"],
+    "next": null
+  },
+  "dumbass": {
+    "type": ["insult"],
+    "next": null
+  },
+  "dumbfuck": {
+    "type": ["insult"],
+    "next": null
+  },
+  "dumbshit": {
+    "type": ["insult"],
+    "next": null
+  },
+  "dumshit": {
+    "type": ["insult"],
+    "next": null
+  },
+  "ejaculate": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "ejaculated": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "ejaculates": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "ejaculating": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "ejaculation": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "fag": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "fagbag": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "fagfucker": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "fagging": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "faggit": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "faggot": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "faggotcock": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "faggs": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "fagot": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "fags": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "fagtard": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "fart": {
+    "type": ["inappropriate"],
+    "next": null
+  },
+  "farted": {
+    "type": ["inappropriate"],
+    "next": null
+  },
+  "farting": {
+    "type": ["inappropriate"],
+    "next": null
+  },
+  "farty": {
+    "type": ["inappropriate"],
+    "next": null
+  },
+  "fatass": {
+    "type": ["insult"],
+    "next": null
+  },
+  "felatio": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "fellatio": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "feltch": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "fingerfuck": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "fingerfucked": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "fingerfucker": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "fingerfucking": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "fingerfucks": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "fistfuck": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "fistfucked": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "fistfucker": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "fistfucking": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "flamer": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "fuck": {
+    "type": ["sexual"],
+    "next": { "you": {
+      "type": ["insult"],
+      "next": null
+    }}
+  },
+  "fuckass": {
+    "type": ["insult"],
+    "next": null
+  },
+  "fuckbag": {
+    "type": ["insult"],
+    "next": null
+  },
+  "fuckboy": {
+    "type": ["insult"],
+    "next": null
+  },
+  "fuckbrain": {
+    "type": ["insult"],
+    "next": null
+  },
+  "fuckbutt": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "fucked": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "fucker": {
+    "type": ["sexual",
+      "insult"],
+    "next": null
+  },
+  "fuckersucker": {
+    "type": ["insult"],
+    "next": null
+  },
+  "fuckface": {
+    "type": ["insult"],
+    "next": null
+  },
+  "fuckhead": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "fuckhole": {
+    "type": ["insult"],
+    "next": null
+  },
+  "fuckin": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "fucking": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "fuckme": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "fucknut": {
+    "type": ["insult"],
+    "next": null
+  },
+  "fucknutt": {
+    "type": ["insult"],
+    "next": null
+  },
+  "fuckoff": {
+    "type": ["insult"],
+    "next": null
+  },
+  "fuckstick": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "fucktard": {
+    "type": ["insult"],
+    "next": null
+  },
+  "fuckup": {
+    "type": ["insult"],
+    "next": null
+  },
+  "fuckwad": {
+    "type": ["insult"],
+    "next": null
+  },
+  "fuckwit": {
+    "type": ["insult"],
+    "next": null
+  },
+  "fuckwitt": {
+    "type": ["insult"],
+    "next": null
+  },
+  "fudgepacker": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "fuk": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "gangbang": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "gangbanged": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "goddamn": {
+    "type": ["inappropriate",
+      "blasphemy"],
+    "next": null
+  },
+  "go": {
+    "type": null,
+    "next": {
+      "fuck": {
+        "type": ["sexual"],
+        "next": {
+          "yourself": {
+            "type": ["sexual", "insult"],
+            "next": null
+          }
+        }
+      }
+    }
+  },
+  "goddamnit": {
+    "type": ["inappropriate",
+      "blasphemy"],
+    "next": null
+  },
+  "gooch": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "gook": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "gringo": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "guido": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "handjob": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "hardcoresex": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "heeb": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "hell": {
+    "type": ["inappropriate"],
+    "next": null
+  },
+  "ho": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "hoe": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "homo": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "homodumbshit": {
+    "type": ["insult"],
+    "next": null
+  },
+  "honkey": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "horniest": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "horny": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "hotsex": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "humping": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "jackass": {
+    "type": ["insult"],
+    "next": null
+  },
+  "jap": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "jigaboo": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "jism": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "jiz": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "jizm": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "jizz": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "jungle bunny": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "junglebunny": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "kike": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "kock": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "kondum": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "kooch": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "kootch": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "kum": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "kumer": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "kummer": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "kumming": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "kums": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "kunilingus": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "kunt": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "kyke": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "lezzie": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "lust": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "lusting": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "mcfagget": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "mick": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "minge": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "mothafuck": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "mothafucka": {
+    "type": ["sexual",
+      "insult"],
+    "next": null
+  },
+  "mothafuckaz": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "mothafucked": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "mothafucker": {
+    "type": ["sexual",
+      "insult"],
+    "next": null
+  },
+  "mothafuckin": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "mothafucking": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "mothafucks": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "motherfuck": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "motherfucked": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "motherfucker": {
+    "type": ["sexual",
+      "insult"],
+    "next": null
+  },
+  "motherfuckin": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "motherfucking": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "muff": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "muffdiver": {
+    "type": ["discriminatory",
+      "sexual"],
+    "next": null
+  },
+  "munging": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "negro": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "nigga": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "nigger": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "niglet": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "nut sack": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "nutsack": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "orgasim": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "orgasm": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "paki": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "panooch": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "pecker": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "peckerhead": {
+    "type": ["insult"],
+    "next": null
+  },
+  "penis": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "penisfucker": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "penispuffer": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "phonesex": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "phuk": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "phuked": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "phuking": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "phukked": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "phukking": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "phuks": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "phuq": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "pis": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "pises": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "pisin": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "pising": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "pisof": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "piss": {
+    "type": ["inappropriate"],
+    "next": null
+  },
+  "pissed": {
+    "type": ["inappropriate"],
+    "next": null
+  },
+  "pisser": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "pisses": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "pissflaps": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "pissin": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "pissing": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "pissoff": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "polesmoker": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "pollock": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "poon": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "poonani": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "poonany": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "poontang": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "porch": {
+    "type": null,
+    "next": {
+      "monkey": {
+        "type": ["discriminatory"],
+        "next": null
+      }
+    }
+  },
+  "porchmonkey": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "porn": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "porno": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "pornography": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "pornos": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "prick": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "punanny": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "punta": {
+    "type": ["insult"],
+    "next": null
+  },
+  "pusies": {
+    "type": ["sexual",
+      "insult"],
+    "next": null
+  },
+  "pussies": {
+    "type": ["sexual",
+      "insult"],
+    "next": null
+  },
+  "pussy": {
+    "type": ["sexual",
+      "insult"],
+    "next": null
+  },
+  "pussylicking": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "pusy": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "puto": {
+    "type": ["insult"],
+    "next": null
+  },
+  "renob": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "rimjob": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "ruski": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "sandnigger": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "schlong": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "scrote": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "shit": {
+    "type": ["sexual",
+      "inappropriate"],
+    "next": null
+  },
+  "shitass": {
+    "type": ["insult"],
+    "next": null
+  },
+  "shitbag": {
+    "type": ["insult"],
+    "next": null
+  },
+  "shitbagger": {
+    "type": ["insult"],
+    "next": null
+  },
+  "shitbrain": {
+    "type": ["insult"],
+    "next": null
+  },
+  "shitbreath": {
+    "type": ["insult"],
+    "next": null
+  },
+  "shitcunt": {
+    "type": ["insult"],
+    "next": null
+  },
+  "shitdick": {
+    "type": ["insult"],
+    "next": null
+  },
+  "shited": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "shitface": {
+    "type": ["insult"],
+    "next": null
+  },
+  "shitfaced": {
+    "type": ["inappropriate",
+      "insult"],
+    "next": null
+  },
+  "shitfull": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "shithead": {
+    "type": ["insult"],
+    "next": null
+  },
+  "shithole": {
+    "type": ["insult"],
+    "next": null
+  },
+  "shithouse": {
+    "type": ["inappropriate"],
+    "next": null
+  },
+  "shiting": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "shitspitter": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "shitstain": {
+    "type": ["inappropriate",
+      "insult"],
+    "next": null
+  },
+  "shitted": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "shitter": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "shittiest": {
+    "type": ["inappropriate"],
+    "next": null
+  },
+  "shitting": {
+    "type": ["inappropriate"],
+    "next": null
+  },
+  "shitty": {
+    "type": ["inappropriate"],
+    "next": null
+  },
+  "shity": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "shiz": {
+    "type": ["inappropriate"],
+    "next": null
+  },
+  "shiznit": {
+    "type": ["inappropriate"],
+    "next": null
+  },
+  "skank": {
+    "type": ["insult"],
+    "next": null
+  },
+  "skeet": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "skullfuck": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "slut": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "slutbag": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "sluts": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "smeg": {
+    "type": ["inappropriate"],
+    "next": null
+  },
+  "smut": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "snatch": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "spic": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "spick": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "splooge": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "spunk": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "tard": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "testicle": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "thundercunt": {
+    "type": ["insult"],
+    "next": null
+  },
+  "tit": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "titfuck": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "tits": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "tittyfuck": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "twat": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "twatlips": {
+    "type": ["insult"],
+    "next": null
+  },
+  "twatwaffle": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "unclefucker": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "va-j-j": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "vag": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "vagina": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "vjayjay": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "wank": {
+    "type": ["sexual"],
+    "next": null
+  },
+  "wet": {
+    "type": null,
+    "next": {
+      "back": {
+        "type": ["discriminatory"],
+        "next": null
+      }
+    }
+  },
+  "wetback": {
+    "type": ["discriminatory"],
+    "next": null
+  },
+  "whore": {
+    "type": ["insult"],
+    "next": null
+  },
+  "whorebag": {
+    "type": ["insult"],
+    "next": null
+  },
+  "whoreface": {
+    "type": ["insult"],
+    "next": null
+  }
+}
