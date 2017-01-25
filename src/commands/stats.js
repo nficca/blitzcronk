@@ -14,9 +14,9 @@ let loadCollection = (name, callback) => {
         }
 
         callback(collection);
-
-        db.saveDatabase();
     });
+
+    db.saveDatabase();
 };
 
 module.exports = {
