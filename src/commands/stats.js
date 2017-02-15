@@ -156,7 +156,7 @@ module.exports = {
             let results = users.chain().find().simplesort('total_messages', true).limit(10).data();
             let result_msg = 'The top chatters in this server are:';
             for (let i = 1; i <= results.length; ++i) {
-                result_msg += `\n${i}. ${results[i - 1].author} - ${results[i - 1].total_messages} messages`;
+                result_msg += `\n${i}. ${results[i - 1].author} - ${results[i - 1].total_messages} messages (Level ${results[i - 1].level})`;
             }
             msg.channel.sendMessage(result_msg);
         });
