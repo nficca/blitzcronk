@@ -30,5 +30,12 @@ module.exports = {
         } else {
             return null;
         }
+    },
+
+    /**
+     * Returns a random color in hex
+     */
+    color: () => {
+        return '#' + Math.floor(Math.random() * 16777215).toString(16)
     }
 };
