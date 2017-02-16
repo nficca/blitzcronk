@@ -163,7 +163,7 @@ module.exports = {
 
             for (let i = 1; i <= results.length; ++i) {
                 // get the actual user object
-                let user = msg.channel.members.get(results[i - 1].author.replace(/[^\d]/g, '')).user;
+                let user = _.get(msg.channel.members.get(results[i - 1].author.replace(/[^\d]/g, '')), 'user');
                 if (user) {
                     names += user.username + '\n';
                     messages += results[i - 1].total_messages + '\n';
@@ -244,7 +244,7 @@ module.exports = {
 
             for (let i = 1; i <= results.length; ++i) {
                 // get the actual user object
-                let user = msg.channel.members.get(results[i - 1].author.replace(/[^\d]/g, '')).user;
+                let user = _.get(msg.channel.members.get(results[i - 1].author.replace(/[^\d]/g, '')), 'user');
                 if (user) {
                     names   += user.username + '\n';
                     pps     += _.sum(_.values(results[i - 1].profanity)) + '\n';
