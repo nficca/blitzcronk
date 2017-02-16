@@ -1,5 +1,7 @@
 const _     = require('lodash'),
       loki  = require('lokijs'),
+      random = require('../helpers/random'),
+      discord = require('discord.js'),
       profanity = require('../../profanity.json');
 
 // Initialization
@@ -154,11 +156,30 @@ module.exports = {
     chatters: (msg, args) => {
         loadCollection('users', (users) => {
             let results = users.chain().find().simplesort('total_messages', true).limit(10).data();
-            let result_msg = 'The top chatters in this server are:';
+
+            let names       = '';
+            let messages    = '';
+            let levels      = '';
+
             for (let i = 1; i <= results.length; ++i) {
-                result_msg += `\n${i}. ${results[i - 1].author} - ${results[i - 1].total_messages} messages (Level ${results[i - 1].level})`;
+                // get the actual user object
+                let user = msg.channel.members.get(results[i - 1].author.replace(/[^\d]/g, '')).user;
+                if (user) {
+                    names += user.username + '\n';
+                    messages += results[i - 1].total_messages + '\n';
+                    levels += results[i - 1].level + '\n'
+                }
             }
-            msg.channel.sendMessage(result_msg);
+
+            // Create the embed message
+            let embed = new discord.RichEmbed();
+            embed.setTitle('Top Chatters');
+            embed.addField('Name', names, true);
+            embed.addField('Total Messages', messages, true);
+            embed.addField('Level', levels, true);
+            embed.setColor(random.color());
+
+            msg.channel.sendEmbed(embed);
         });
     },
 
@@ -205,20 +226,41 @@ module.exports = {
                     totals1    = _.sum(_.values(profanity1)),
                     totals2    = _.sum(_.values(profanity2));
 
+                // make sure both users have made profanities, if not, rank accordingly
                 if (!profanity1 && !profanity2) return 0;
                 if (!profanity2) return -1;
                 if (!profanity1) return 1;
 
+                // check which user has used the most profanities
                 if (totals1 == totals2) return 0;
                 if (totals1 > totals2) return -1;
                 if (totals1 < totals2) return 1;
 
             }).limit(10).data();
-            let result_msg = 'The top swearers in this server are:';
+
+            let names   = '';
+            let pps     = '';
+            let commons = '';
+
             for (let i = 1; i <= results.length; ++i) {
-                result_msg += `\n${i}. ${results[i - 1].author} - ${_.sum(_.values(results[i - 1].profanity))} profanity points`;
+                // get the actual user object
+                let user = msg.channel.members.get(results[i - 1].author.replace(/[^\d]/g, '')).user;
+                if (user) {
+                    names   += user.username + '\n';
+                    pps     += _.sum(_.values(results[i - 1].profanity)) + '\n';
+                    commons += _.keys(results[i - 1].profanity)[_.indexOf(_.values(results[i - 1].profanity), _.max(_.values(results[i - 1].profanity)))] + '\n';
+                }
             }
-            msg.channel.sendMessage(result_msg);
+
+            // Create the embed message
+            let embed = new discord.RichEmbed();
+            embed.setTitle('Top Swearers');
+            embed.addField('Name', names, true);
+            embed.addField('Profanity Points', pps, true);
+            embed.addField('Common Profanity Type', commons, true);
+            embed.setColor(random.color());
+
+            msg.channel.sendEmbed(embed);
         });
     }
 };
