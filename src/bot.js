@@ -47,3 +47,7 @@ bot.on('message', (message) => {
   }
 
 });
+
+bot.on('messageReactionAdd', (message_reaction, user) => {
+  stats.countReaction(message_reaction, user);
+});

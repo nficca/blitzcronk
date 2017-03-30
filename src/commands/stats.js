@@ -109,7 +109,8 @@ module.exports = {
                     'author': author,
                     'total_messages': 1,
                     'level': 1,
-                    'profanity': profanity_use
+                    'profanity': profanity_use,
+                    'reactions': {}
                 });
             } else {
                 if (_.get(result, 'total_messages') && result.total_messages > 0) {
@@ -138,6 +139,58 @@ module.exports = {
                     }
                 }
 
+
+                users.update(result);
+            }
+
+            db.saveDatabase();
+        });
+    },
+
+    /**
+     * [hide]
+     * Counts a reaction for the database
+     *
+     * @param {MessageReaction} reaction
+     * @param {User} user
+     */
+    countReaction: (reaction, user) => {
+        let emoji_id = reaction.emoji.id != null ? reaction.emoji.id : reaction.emoji.identifier;
+        loadCollection('users', (users) => {
+            let result = users.findOne({'author': user.toString()});
+
+            // if user does not exist in DB then insert new entry
+            if (!result || result.length == 0) {
+                console.log(`Couldn't find user ${author} in database. Inserting...`);
+
+                // initialize reactions field
+                let reactions = {};
+                reactions[emoji_id] = 1;
+
+                // insert
+                users.insert({
+                    'author': user.toString(),
+                    'total_messages': 0,
+                    'level': 1,
+                    'profanity': {},
+                    'reactions': reactions
+                });
+            }
+
+            // user does exist
+            else {
+                // initialize reactions field if not part of user entry
+                if (!_.get(result, 'reactions') || typeof result.profanity !== "object") {
+                    result.reactions = {};
+                    result.reactions[emoji_id] = 1;
+                }
+
+                // add emoji to reactions
+                else if (_.get(result, `reactions.${emoji_id}`)) {
+                    result.reactions[emoji_id]++;
+                } else {
+                    result.reactions[emoji_id] = 1;
+                }
 
                 users.update(result);
             }
