@@ -55,7 +55,7 @@ let getTopReaction = (user, client) => {
     }
 
     // only get emoji if not null
-    if (emoji_id != null) {
+    if (emoji_id !== null) {
         // try to do lookup to see if it's a custom emoji
         let custom_emoji = client.emojis.get(emoji_id);
 
