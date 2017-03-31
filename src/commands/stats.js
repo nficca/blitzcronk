@@ -26,6 +26,49 @@ let calcLevel = (total_messages) => {
     ));
 };
 
+/**
+ * [hide]
+ * Gets the most used reaction emoji for a user
+ * Returns the emoji in a format that can be printed on discord
+ * Returns null if no emoji used
+ *
+ * @param user
+ * @param {Client} client
+ */
+let getTopReaction = (user, client) => {
+    let emoji_id = null;
+    let most_used_count = 0;
+
+    // return null when no reactions at all
+    if (!_.get(user, 'reactions')) {
+        return null;
+    }
+
+    // look for most frequent reaction
+    else {
+        for (let id in user.reactions) {
+            if (user.reactions[id] > most_used_count) {
+                emoji_id = id;
+                most_used_count = user.reactions[id];
+            }
+        }
+    }
+
+    // only get emoji if not null
+    if (emoji_id != null) {
+        // try to do lookup to see if it's a custom emoji
+        let custom_emoji = client.emojis.get(emoji_id);
+
+        if (!custom_emoji) {
+            // not a custom emoji so that means it's UTF-8 encoded emoji
+            return decodeURIComponent(emoji_id);
+        }
+        return custom_emoji;
+    }
+
+    return null;
+};
+
 let getProfanities = (message) => {
     let words = message.toLowerCase().split(' ');
     let profanity_types = [];
