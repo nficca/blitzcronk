@@ -267,6 +267,32 @@ module.exports = {
     },
 
     /**
+     * [hide]
+     * Removes the emoji from each users list of reactions
+     *
+     * @param {Emoji} emoji
+     */
+    removeEmojiFromDB: (emoji) => {
+        console.log("Start");
+        loadCollection('users', (users) => {
+            // find all users that had used the deleted emoji
+            let results = users.where((user) => {
+                return (_.get(user, 'reactions')) && user.reactions.hasOwnProperty("297158408463843328");
+            });
+
+            // remove the deleted emoji from the users' reactions
+            for (let i = 0; i < results.length; ++i) {
+                console.log("Found a user.");
+                delete results[i]['reactions']["297158408463843328"];
+            }
+
+            users.update(results);
+
+            db.saveDatabase();
+        });
+    },
+
+    /**
      * /chatters
      * Gets the top 10 chatters in the server
      *
