@@ -146,7 +146,7 @@ module.exports = {
 
         loadCollection('users', (users) => {
             let result = users.findOne({'author': author});
-            if (!result || !result.length) {
+            if (!result || !Object.keys(result).length) {
                 console.log(`Couldn't find user ${author} in database. Inserting...`);
                 users.insert({
                     'author': author,
@@ -203,7 +203,7 @@ module.exports = {
             let result = users.findOne({'author': user.toString()});
 
             // if user does not exist in DB then insert new entry
-            if (!result || !result.length) {
+            if (!result || !Object.keys(result).length) {
                 console.log(`Couldn't find user ${author} in database. Inserting...`);
 
                 // initialize reactions field
@@ -290,7 +290,7 @@ module.exports = {
         let author = msg.author.toString();
         loadCollection('users', (users) => {
             let result = users.findOne({'author': author});
-            if (!result || result.length === 0) {
+            if (!result || !Object.keys(result).length) {
                 msg.channel.sendMessage(`${author}: You appear to have no stats... try again in a moment.`)
             } else {
                 let result_msg = `${author}'s stats:\`\`\``;
