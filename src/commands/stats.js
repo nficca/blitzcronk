@@ -34,7 +34,7 @@ let getProfanities = (message) => {
     let obj = null;
     for (let i = 0; i < words.length; ++i) {
         // Check if current obj has next
-        if (obj != null && obj.next) {
+        if (obj !== null && obj.next) {
 
             // Check if current word follows last word
             if (_.get(obj, 'next.' + words[i])) {
@@ -44,7 +44,7 @@ let getProfanities = (message) => {
             // doesn't follow, but check if it's a profanity
             else if (profanity[words[i]]) {
                 // check if last word was a profanity by itself
-                if (obj != null && obj.type != null) {
+                if (obj !== null && obj.type !== null) {
                     profanity_types = profanity_types.concat(obj.type);
                 }
                 // point to current word because it's a profanity
@@ -52,28 +52,28 @@ let getProfanities = (message) => {
             }
             // current word is not a profanity and doesn't follow
             else {
-                if (obj.type != null) profanity_types = profanity_types.concat(obj.type);
+                if (obj.type !== null) profanity_types = profanity_types.concat(obj.type);
                 obj = null;
             }
         }
         // is current word a profanity
         else if (profanity[words[i]]) {
             // check if last word was a profanity by itself
-            if (obj != null && obj.type != null) {
+            if (obj !== null && obj.type !== null) {
                 profanity_types = profanity_types.concat(obj.type);
             }
             // point to current word because it's a profanity
             obj = profanity[words[i]];
         }
         // current is not a profanity, check if last word was
-        else if (obj != null) {
-            if (obj.type != null) profanity_types = profanity_types.concat(obj.type);
+        else if (obj !== null) {
+            if (obj.type !== null) profanity_types = profanity_types.concat(obj.type);
             obj = null;
         }
     }
 
     // check if last word in message was a profanity
-    if (obj != null && obj.type != null) {
+    if (obj !== null && obj.type !== null) {
         profanity_types = profanity_types.concat(obj.type);
     }
 
@@ -103,7 +103,7 @@ module.exports = {
 
         loadCollection('users', (users) => {
             let result = users.findOne({'author': author});
-            if (!result || result.length == 0) {
+            if (!result || !result.length) {
                 console.log(`Couldn't find user ${author} in database. Inserting...`);
                 users.insert({
                     'author': author,
@@ -116,7 +116,7 @@ module.exports = {
                 if (_.get(result, 'total_messages') && result.total_messages > 0) {
                     result.total_messages++;
                     let new_level = calcLevel(result.total_messages);
-                    if (!_.get(result, 'level') || result.level != new_level) {
+                    if (!_.get(result, 'level') || result.level !== new_level) {
                         result.level = new_level;
                         if (!msg.author.bot) {
                             msg.channel.sendMessage(`:tada: Congratulations ${author}, you are now Level ${new_level}! :tada:`);
@@ -155,12 +155,12 @@ module.exports = {
      * @param {User} user
      */
     countReaction: (reaction, user) => {
-        let emoji_id = reaction.emoji.id != null ? reaction.emoji.id : reaction.emoji.identifier;
+        let emoji_id = reaction.emoji.id !== null ? reaction.emoji.id : reaction.emoji.identifier;
         loadCollection('users', (users) => {
             let result = users.findOne({'author': user.toString()});
 
             // if user does not exist in DB then insert new entry
-            if (!result || result.length == 0) {
+            if (!result || !result.length) {
                 console.log(`Couldn't find user ${author} in database. Inserting...`);
 
                 // initialize reactions field
@@ -247,7 +247,7 @@ module.exports = {
         let author = msg.author.toString();
         loadCollection('users', (users) => {
             let result = users.findOne({'author': author});
-            if (!result || result.length == 0) {
+            if (!result || result.length === 0) {
                 msg.channel.sendMessage(`${author}: You appear to have no stats... try again in a moment.`)
             } else {
                 let result_msg = `${author}'s stats:\`\`\``;
@@ -285,7 +285,7 @@ module.exports = {
                 if (!profanity1) return 1;
 
                 // check which user has used the most profanities
-                if (totals1 == totals2) return 0;
+                if (totals1 === totals2) return 0;
                 if (totals1 > totals2) return -1;
                 if (totals1 < totals2) return 1;
 
