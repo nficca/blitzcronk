@@ -260,9 +260,8 @@ module.exports = {
             for (let i = 1; i <= results.length; ++i) {
                 // get the actual user object
                 let user = _.get(msg.channel.members.get(results[i - 1].author.replace(/[^\d]/g, '')), 'user');
-                let top_reaction = getTopReaction(results[i - 1], msg.client);
                 if (user) {
-                    names += (top_reaction != null ? top_reaction : '') + ' ' + user.username + '\n';
+                    names += user.username + '\n';
                     messages += results[i - 1].total_messages + '\n';
                     levels += results[i - 1].level + '\n'
                 }
