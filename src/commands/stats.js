@@ -337,23 +337,50 @@ module.exports = {
 
     /**
      * /stats
-     * Displays your stats
+     * Displays your stats if no arguments or the user given's stats
      *
      * @param {Message} msg
      * @param {Array}   args
      */
     stats: (msg, args) => {
-        let author = msg.author.toString();
+        let user = msg.author;
+
+        // if another user specified, look for them
+        if (args.length) {
+            let username = args.join(" ");
+
+            // see if user is in guild
+            let result = msg.guild.members.find(member => member.user.username === username);
+
+            // if user is in guild then they are the user too look up stats about
+            if (result) {
+                user = result.user;
+            }
+
+            // a username was given but they're not in the guild
+            else {
+                // do one last case-insensitive check to make sure
+                result = msg.guild.members.find(member => member.user.username.toLocaleLowerCase() === username.toLowerCase());
+                if (result) {
+                    user = result.user;
+                } else {
+                    // user can't be found
+                    msg.channel.send(`I don't know any ${username}, did you misspell their name?`);
+                    return;
+                }
+            }
+        }
+
         loadCollection('users', (users) => {
-            let result = users.findOne({'author': author});
+            let result = users.findOne({'author': user.toString()});
 
             // ensure user exists
             if (!result || !Object.keys(result).length) {
-                msg.channel.sendMessage(`${author}: You appear to have no stats... try again in a moment.`)
+                msg.channel.sendMessage(`${user} appears to have no stats. If they chat some more, I'll be able to collect their stats.`)
             } else {
 
                 // get the highest role of the user
-                let role = getUsersRoleInGuild(msg.author, msg.guild);
+                let role = getUsersRoleInGuild(user, msg.guild);
 
                 // get the profanity points of the user
                 let pps = [];
@@ -382,9 +409,9 @@ module.exports = {
 
                 // Create the embed message
                 let embed = new discord.RichEmbed();
-                embed.setTitle(`${msg.author.username}'s Stats`);
+                embed.setTitle(`${user.username}'s Stats`);
                 embed.setDescription(print_role + print_messages + `Level **${result.level}**`);
-                embed.setThumbnail(msg.author.avatarURL);
+                embed.setThumbnail(user.avatarURL);
                 embed.addField('Profanity Points', pps, true);
                 embed.addField('Top Reactions', top_reactions, true);
                 embed.setColor(_.get(role, 'hexColor') ? _.get(role, 'hexColor') : random.color());
