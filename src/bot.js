@@ -44,7 +44,7 @@ bot.on('message', (message) => {
     read_command(message, command, args);
   } else {
     // count the normal message
-    stats.countMsg(message)
+    stats.countMsg(message);
   }
 
 });

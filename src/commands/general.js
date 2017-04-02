@@ -118,9 +118,9 @@ module.exports = {
     let result = random.int(1, 100);
 
     // If rolling dice
-    if (args.length == 1) {
+    if (args.length === 1) {
       let inputs = args[0].split('d');
-      if (inputs.length == 2 && parseInt(inputs[0]) && parseInt([1])) {
+      if (inputs.length === 2 && parseInt(inputs[0]) && parseInt([1])) {
           let rolls = parseInt(inputs[0]);
           let die = parseInt(inputs[1]);
           if (rolls >= 1 && rolls <= 100 && die >= 2 && die <= 100) {
