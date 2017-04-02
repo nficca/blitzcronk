@@ -1,4 +1,4 @@
-const random = require('../helpers/random'),
+const Random = require('../classes/Random'),
       giphy = require('giphy-api')(),
       _ = require('lodash'),
       docs = require('../../docs.json');
@@ -12,7 +12,7 @@ module.exports = {
    * @param {Array}   args
    */
   choose: (msg, args) => {
-    msg.channel.sendMessage(random.element(args));
+    msg.channel.sendMessage(Random.element(args));
   },
 
   /**
@@ -53,7 +53,7 @@ module.exports = {
   gifr: (msg, args) => {
     giphy.search(args.join(' '), (err, res) => {
       if (!err && res.data.length) {
-        msg.channel.sendMessage(random.element(res.data).url);
+        msg.channel.sendMessage(Random.element(res.data).url);
       } else {
         msg.channel.sendMessage('Your search didn\'t yield any results! :sob:');
       }
@@ -115,7 +115,7 @@ module.exports = {
    * @param {Array}   args
    */
   roll: (msg, args) => {
-    let result = random.int(1, 100);
+    let result = Random.int(1, 100);
 
     // If rolling dice
     if (args.length === 1) {
@@ -126,7 +126,7 @@ module.exports = {
           if (rolls >= 1 && rolls <= 100 && die >= 2 && die <= 100) {
               result = 0;
               for (let i = 1; i <= rolls; ++i) {
-                  result += random.int(1, die);
+                  result += Random.int(1, die);
               }
           }
       }

@@ -1,6 +1,6 @@
 const _     = require('lodash'),
       loki  = require('lokijs'),
-      random = require('../helpers/random'),
+      Random = require('../classes/Random'),
       discord = require('discord.js'),
       profanity = require('../../profanity.json');
 
@@ -329,7 +329,7 @@ module.exports = {
             embed.addField('Name', names, true);
             embed.addField('Total Messages', messages, true);
             embed.addField('Level', levels, true);
-            embed.setColor(random.color());
+            embed.setColor(Random.color());
 
             msg.channel.sendEmbed(embed);
         });
@@ -414,7 +414,7 @@ module.exports = {
                 embed.setThumbnail(user.avatarURL);
                 embed.addField('Profanity Points', pps, true);
                 embed.addField('Top Reactions', top_reactions, true);
-                embed.setColor(_.get(role, 'hexColor') ? _.get(role, 'hexColor') : random.color());
+                embed.setColor(_.get(role, 'hexColor') ? _.get(role, 'hexColor') : Random.color());
 
                 msg.channel.sendEmbed(embed);
             }
@@ -469,7 +469,7 @@ module.exports = {
             embed.addField('Name', names, true);
             embed.addField('Profanity Points', pps, true);
             embed.addField('Common Profanity Type', commons, true);
-            embed.setColor(random.color());
+            embed.setColor(Random.color());
 
             msg.channel.sendEmbed(embed);
         });
