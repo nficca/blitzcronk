@@ -1,5 +1,5 @@
 // COMMANDS
-// -------
+// --------
 const general = require('./commands/general');
 const stats   = require('./commands/stats');
 
@@ -14,48 +14,29 @@ module.exports = (msg, command, args) => {
 
   let execute_command = null;
 
-  switch(command) {
-    // General Commands
-    case 'choose':
-      execute_command = general.choose;
-      break;
-    case 'echo':
-      execute_command = general.echo;
-      break;
-    case 'gif':
-      execute_command = general.gif;
-      break;
-    case 'gifr':
-      execute_command = general.gifr;
-      break;
-    case 'help':
-      execute_command = general.help;
-      break;
-    case 'ping':
-      execute_command = general.ping;
-      break;
-    case 'roll':
-      execute_command = general.roll;
-      break;
-    case 'users':
-      execute_command = general.users;
-      break;
+  const general_commands    = ['choose', 'echo', 'gif', 'gifr', 'help', 'ping', 'roll', 'users'];
+  const data_commands       = ['chatters', 'stats', 'swearjar'];
 
-    // Stats Commands
-    case 'chatters':
-      execute_command = stats.chatters;
-      break;
-    case 'stats':
-      execute_command = stats.stats;
-      break;
-    case 'swearjar':
-      execute_command = stats.swearjar;
-      break;
+  // check to see if it's a general command
+  if (general_commands.indexOf(command) > -1) {
+      execute_command = general[command];
   }
 
-  if (execute_command) {
-    execute_command(msg, args);
-  } else {
-    msg.channel.sendMessage("Sorry, `" + command + "` is not a command. Typo?");
+  // check to see if it's a data command
+  else if (data_commands.indexOf(command) > -1) {
+      execute_command = stats[command];
+  }
+
+  // looked through all commands and found no results
+  else {
+      msg.channel.sendMessage("Sorry, `" + command + "` is not a command. Typo?");
+      return;
+  }
+
+  try {
+      execute_command(msg, args);
+  } catch (e) {
+      console.error('Failed to execute command');
+      console.error(e);
   }
 };

@@ -49,6 +49,9 @@ bot.on('message', (message) => {
 
 });
 
+/**
+ * Handles reactions when added to messages
+ */
 bot.on('messageReactionAdd', (message_reaction, user) => {
   stats.countReaction(message_reaction, user);
 });
