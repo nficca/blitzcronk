@@ -336,7 +336,7 @@ module.exports = {
     },
 
     /**
-     * /stats
+     * /stats <user>
      * Displays your stats if no arguments or the user given's stats
      *
      * @param {Message} msg
