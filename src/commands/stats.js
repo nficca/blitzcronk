@@ -74,15 +74,21 @@ let getTopReactions = (user, client, n = 1, include_counts = false) => {
         let sorted_reactions = _.map(user.reactions, (value, key) => [key, value]).sort((a, b) => b[1] - a[1]);
         let top_reactions = sorted_reactions.slice(0, n);
 
-        for (let i = 0; i < top_reactions.length; ++i) {
+        for (let i = top_reactions.length - 1; i >= 0; --i) {
             // only get emoji if not null
             if (top_reactions[i][0] !== null) {
                 // try to do lookup to see if it's a custom emoji
                 let custom_emoji = client.emojis.get(top_reactions[i][0]);
 
                 if (!custom_emoji) {
-                    // not a custom emoji so that means it's UTF-8 encoded emoji
-                    top_reactions[i][0] = decodeURIComponent(top_reactions[i][0]);
+                    // not a custom emoji so that means it's probably a UTF-8 encoded emoji...
+                    if (decodeURIComponent(top_reactions[i][0]) === top_reactions[i][0]) {
+                        // ...but decoding did nothing, so remove the emoji because it's broken
+                        top_reactions.splice(i, 1);
+                    } else {
+                        // decoding changes the string, so it must be the emoji
+                        top_reactions[i][0] = decodeURIComponent(top_reactions[i][0]);
+                    }
                 } else {
                     top_reactions[i][0] = custom_emoji;
                 }

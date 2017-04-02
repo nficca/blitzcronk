@@ -52,3 +52,9 @@ bot.on('message', (message) => {
 bot.on('messageReactionAdd', (message_reaction, user) => {
   stats.countReaction(message_reaction, user);
 });
+
+// // TODO: Uncomment and test when https://github.com/hydrabolt/discord.js/issues/1333 is resolved
+// bot.on('emojiDelete', (emoji) => {
+//   console.log(`${emoji.name} deleted`);
+//   stats.removeEmojiFromDB(emoji);
+// });
