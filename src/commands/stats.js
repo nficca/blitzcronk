@@ -360,7 +360,7 @@ module.exports = {
                 let profanities = _.get(result, 'profanity');
                 if (profanities) {
                     for (let profanity in profanities) {
-                        pps.push(`${profanities[profanity]} ${profanity} points`);
+                        pps.push(`${profanities[profanity]} ${profanity} point${profanities[profanity] !== 1 ? 's' : ''}`);
                     }
                     if (pps.length) {
                         pps = pps.join("\n");
@@ -370,17 +370,20 @@ module.exports = {
                 }
 
                 // get the top 3 reactions of the user
-                let top_reactions = getTopReactions(result, msg.client, 3);
+                let top_reactions = getTopReactions(result, msg.client, 5);
                 if (top_reactions.length) {
                     top_reactions = top_reactions.join(" ");
                 } else {
                     top_reactions = 'No reactions!';
                 }
 
+                let print_role = (role ? (`${role} | `) : "");
+                let print_messages = (_.get(result, 'total_messages') >= 0 ? `${result.total_messages} message${(result.total_messages !== 1 ? 's' : '')} | ` : '')
+
                 // Create the embed message
                 let embed = new discord.RichEmbed();
                 embed.setTitle(`${msg.author.username}'s Stats`);
-                embed.setDescription((role ? (`${role} | `) : "") + `Level **${result.level}**`);
+                embed.setDescription(print_role + print_messages + `Level **${result.level}**`);
                 embed.setThumbnail(msg.author.avatarURL);
                 embed.addField('Profanity Points', pps, true);
                 embed.addField('Top Reactions', top_reactions, true);
