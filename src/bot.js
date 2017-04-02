@@ -22,8 +22,6 @@ bot.on('ready', () => {
  */
 bot.on('message', (message) => {
 
-  stats.countMsg(message)
-
   let prefix_regex      = new RegExp('^' + command_prefix + '[a-zA-Z0-9_]+');
   let components_regex  = new RegExp('[^ ]+|"(?:\\\\"|[^"])+"', 'g');
 
@@ -44,6 +42,9 @@ bot.on('message', (message) => {
 
     // process the command
     read_command(message, command, args);
+  } else {
+    // count the normal message
+    stats.countMsg(message)
   }
 
 });
