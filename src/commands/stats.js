@@ -27,46 +27,76 @@ let calcLevel = (total_messages) => {
 };
 
 /**
- * [hide]
- * Gets the most used reaction emoji for a user
- * Returns the emoji in a format that can be printed on discord
- * Returns null if no emoji used
+ * Returns the highest role that the user is a part of in the given guild
+ *
+ * @param {User} user
+ * @param {Guild} guild
+ */
+let getUsersRoleInGuild = (user, guild) => {
+    try {
+        let roles = guild.member(user).roles.array();
+        let role = roles[0];
+
+        // find highest role of all applicable roles to user
+        for (let i = 1; i < roles.length; ++i) {
+            if (role.comparePositionTo(roles[i]) < 0) {
+                role = roles[i];
+            }
+        }
+
+        return role;
+    } catch (e) {
+        console.log(`Error with getting user's role in guild: ${e}`);
+        return null;
+    }
+};
+
+/**
+ * Gets the n most used reaction emojis for a user
+ * Set include_counts to true if you want the number of uses per reaction included in the results
+ * Returns the emojis in a format that can be printed on discord
+ * Returns [] if no emojis used or if there was an error
  *
  * @param user
  * @param {Client} client
+ * @param {Number} n
+ * @param {Boolean} include_counts
  */
-let getTopReaction = (user, client) => {
-    let emoji_id = null;
-    let most_used_count = 0;
-
-    // return null when no reactions at all
+let getTopReactions = (user, client, n = 1, include_counts = false) => {
+    // return empty array when no reactions at all
     if (!_.get(user, 'reactions')) {
-        return null;
+        return [];
     }
 
     // look for most frequent reaction
     else {
-        for (let id in user.reactions) {
-            if (user.reactions[id] > most_used_count) {
-                emoji_id = id;
-                most_used_count = user.reactions[id];
+        // sort the reactions by most used to least used
+        let sorted_reactions = _.map(user.reactions, (value, key) => [key, value]).sort((a, b) => b[1] - a[1]);
+        let top_reactions = sorted_reactions.slice(0, n);
+
+        for (let i = top_reactions.length - 1; i >= 0; --i) {
+            // only get emoji if not null
+            if (top_reactions[i][0] !== null) {
+                // try to do lookup to see if it's a custom emoji
+                let custom_emoji = client.emojis.get(top_reactions[i][0]);
+
+                if (!custom_emoji) {
+                    // not a custom emoji so that means it's probably a UTF-8 encoded emoji...
+                    if (decodeURIComponent(top_reactions[i][0]) === top_reactions[i][0]) {
+                        // ...but decoding did nothing, so remove the emoji because it's broken
+                        top_reactions.splice(i, 1);
+                    } else {
+                        // decoding changes the string, so it must be the emoji
+                        top_reactions[i][0] = decodeURIComponent(top_reactions[i][0]);
+                    }
+                } else {
+                    top_reactions[i][0] = custom_emoji;
+                }
             }
         }
+
+        return include_counts ? top_reactions : _.map(top_reactions, (reaction) => reaction[0]);
     }
-
-    // only get emoji if not null
-    if (emoji_id !== null) {
-        // try to do lookup to see if it's a custom emoji
-        let custom_emoji = client.emojis.get(emoji_id);
-
-        if (!custom_emoji) {
-            // not a custom emoji so that means it's UTF-8 encoded emoji
-            return decodeURIComponent(emoji_id);
-        }
-        return custom_emoji;
-    }
-
-    return null;
 };
 
 let getProfanities = (message) => {
@@ -243,6 +273,32 @@ module.exports = {
     },
 
     /**
+     * [hide]
+     * Removes the emoji from each users list of reactions
+     *
+     * @param {Emoji} emoji
+     */
+    removeEmojiFromDB: (emoji) => {
+        console.log("Start");
+        loadCollection('users', (users) => {
+            // find all users that had used the deleted emoji
+            let results = users.where((user) => {
+                return (_.get(user, 'reactions')) && user.reactions.hasOwnProperty("297158408463843328");
+            });
+
+            // remove the deleted emoji from the users' reactions
+            for (let i = 0; i < results.length; ++i) {
+                console.log("Found a user.");
+                delete results[i]['reactions']["297158408463843328"];
+            }
+
+            users.update(results);
+
+            db.saveDatabase();
+        });
+    },
+
+    /**
      * /chatters
      * Gets the top 10 chatters in the server
      *
@@ -281,27 +337,86 @@ module.exports = {
 
     /**
      * /stats
-     * Displays your stats
+     * Displays your stats if no arguments or the user given's stats
      *
      * @param {Message} msg
      * @param {Array}   args
      */
     stats: (msg, args) => {
-        let author = msg.author.toString();
+        let user = msg.author;
+
+        // if another user specified, look for them
+        if (args.length) {
+            let username = args.join(" ");
+
+            // see if user is in guild
+            let result = msg.guild.members.find(member => member.user.username === username);
+
+            // if user is in guild then they are the user too look up stats about
+            if (result) {
+                user = result.user;
+            }
+
+            // a username was given but they're not in the guild
+            else {
+                // do one last case-insensitive check to make sure
+                result = msg.guild.members.find(member => member.user.username.toLocaleLowerCase() === username.toLowerCase());
+                if (result) {
+                    user = result.user;
+                } else {
+                    // user can't be found
+                    msg.channel.send(`I don't know any ${username}, did you misspell their name?`);
+                    return;
+                }
+            }
+        }
+
         loadCollection('users', (users) => {
-            let result = users.findOne({'author': author});
+            let result = users.findOne({'author': user.toString()});
+
+            // ensure user exists
             if (!result || !Object.keys(result).length) {
-                msg.channel.sendMessage(`${author}: You appear to have no stats... try again in a moment.`)
+                msg.channel.sendMessage(`${user} appears to have no stats. If they chat some more, I'll be able to collect their stats.`)
             } else {
-                let result_msg = `${author}'s stats:\`\`\``;
-                if (_.get(result, 'total_messages')) {
-                    result_msg += `\nTotal messages: ${result.total_messages}`;
+
+                // get the highest role of the user
+                let role = getUsersRoleInGuild(user, msg.guild);
+
+                // get the profanity points of the user
+                let pps = [];
+                let profanities = _.get(result, 'profanity');
+                if (profanities) {
+                    for (let profanity in profanities) {
+                        pps.push(`${profanities[profanity]} ${profanity} point${profanities[profanity] !== 1 ? 's' : ''}`);
+                    }
+                    if (pps.length) {
+                        pps = pps.join("\n");
+                    } else {
+                        pps = 'No profanity points!';
+                    }
                 }
-                if (_.get(result, 'level')) {
-                    result_msg += `\nCurrent level: ${result.level}`;
+
+                // get the top 3 reactions of the user
+                let top_reactions = getTopReactions(result, msg.client, 5);
+                if (top_reactions.length) {
+                    top_reactions = top_reactions.join(" ");
+                } else {
+                    top_reactions = 'No reactions!';
                 }
-                result_msg += '```';
-                msg.channel.sendMessage(result_msg);
+
+                let print_role = (role ? (`${role} | `) : "");
+                let print_messages = (_.get(result, 'total_messages') >= 0 ? `${result.total_messages} message${(result.total_messages !== 1 ? 's' : '')} | ` : '')
+
+                // Create the embed message
+                let embed = new discord.RichEmbed();
+                embed.setTitle(`${user.username}'s Stats`);
+                embed.setDescription(print_role + print_messages + `Level **${result.level}**`);
+                embed.setThumbnail(user.avatarURL);
+                embed.addField('Profanity Points', pps, true);
+                embed.addField('Top Reactions', top_reactions, true);
+                embed.setColor(_.get(role, 'hexColor') ? _.get(role, 'hexColor') : random.color());
+
+                msg.channel.sendEmbed(embed);
             }
         })
     },
