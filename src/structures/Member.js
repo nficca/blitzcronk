@@ -1,5 +1,5 @@
-const _ = require('lodash'),
-      profanity = require('../../profanity.json');
+import * as _ from 'lodash';
+import * as profanity from '../../profanity.json';
 
 /**
  * Represents a member in the channel
@@ -245,5 +245,4 @@ class Member {
     }
 }
 
-
-module.exports = Member;
+export default Member;

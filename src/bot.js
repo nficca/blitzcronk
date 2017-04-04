@@ -1,9 +1,11 @@
-const read_command  = require('./read-command'),
-      stats         = require('./commands/stats'),
-      discord       = require('discord.js'),
-      secret        = require('../config.json').secret;
+import * as stats from './commands/stats';
+import * as Discord from '../node_modules/discord.js';
+import * as config from '../config.json';
 
-const bot = new discord.Client();
+import read_command from './read-command';
+
+const bot = new Discord.Client();
+const secret = config.secret;
 
 bot.login(secret);
 

@@ -1,7 +1,10 @@
-const Random = require('../static/Random'),
-      giphy = require('giphy-api')(),
-      _ = require('lodash'),
-      docs = require('../../docs.json');
+import Random from '../static/Random';
+import giphy_api from 'giphy-api'
+
+import * as _ from 'lodash';
+import * as docs from '../../docs.json';
+
+const giphy = giphy_api();
 
 module.exports = {
   /**

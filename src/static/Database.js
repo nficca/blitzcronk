@@ -1,11 +1,9 @@
-
-const loki  = require('lokijs'),
-      _     = require('lodash');
+import Loki from 'lokijs';
 
 /**
  * @type {Loki} db
  */
-const db    = new loki('db.json');
+const db    = new Loki('db.json');
 
 
 /**
@@ -51,4 +49,4 @@ class Database {
     }
 }
 
-module.exports = Database;
+export default Database;

@@ -1,8 +1,9 @@
-const _     = require('lodash'),
-      Database = require('../static/Database'),
-      Random = require('../static/Random'),
-      Member = require('../structures/Member'),
-      discord = require('discord.js');
+import Database from '../static/Database';
+import Random from '../static/Random';
+import Member from '../structures/Member';
+
+import * as Discord from '../../node_modules/discord.js';
+import * as _ from 'lodash';
 
 module.exports = {
     /**
@@ -142,7 +143,7 @@ module.exports = {
             }
 
             // Create the embed message
-            let embed = new discord.RichEmbed();
+            let embed = new Discord.RichEmbed();
             embed.setTitle('Top Chatters');
             embed.addField('Name', names, true);
             embed.addField('Total Messages', messages, true);
@@ -223,7 +224,7 @@ module.exports = {
                 let messages = `${member.totalMessages} message${member.totalMessages !== 1 ? 's' : ''}`;
 
                 // Create the embed message
-                let embed = new discord.RichEmbed();
+                let embed = new Discord.RichEmbed();
                 embed.setTitle(`${user.username}'s stats`);
                 embed.setDescription(`${member.role} | ${messages} | Level **${doc.level}**`);
                 embed.setThumbnail(user.avatarURL);
@@ -237,8 +238,8 @@ module.exports = {
     },
 
     /**
-     *  /swearjar
-     *  Lists the top 10 most vulgar users
+     * /swearjar
+     * Lists the top 10 most vulgar users
      *
      * @param {Message} msg
      * @param {Array}   args
@@ -281,7 +282,7 @@ module.exports = {
             }
 
             // Create the embed message
-            let embed = new discord.RichEmbed();
+            let embed = new Discord.RichEmbed();
             embed.setTitle('Top Swearers');
             embed.addField('Name', names, true);
             embed.addField('Profanity Points', profanities, true);

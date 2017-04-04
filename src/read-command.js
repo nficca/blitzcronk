@@ -1,7 +1,5 @@
-// COMMANDS
-// --------
-const general = require('./commands/general');
-const stats   = require('./commands/stats');
+import * as general from './commands/general';
+import * as stats from './commands/stats';
 
 /**
  * Reads a command and determines which command function to run
@@ -10,7 +8,7 @@ const stats   = require('./commands/stats');
  * @param {String}  command
  * @param {Array}   args
  */
-module.exports = (msg, command, args) => {
+export default (msg, command, args) => {
 
   let execute_command = null;
 
