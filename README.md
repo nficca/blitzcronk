@@ -15,9 +15,12 @@ $ npm install -g gulp
 ```
 Now create the json config file that will tell blitzcronk to use your newly created application:
 ```
-$ echo "{\"secret\": \"<YOUR_TOKEN>\"}" > config.json
+$ echo "{\"token\":\"<YOUR_TOKEN>\",\"prefix\":\".\"}" > config.json
 ```
+Note that you may also set the command prefix in the config file as well. The above will use `.` by default.
+
 Add the bot to your server using this link: `https://discordapp.com/api/oauth2/authorize?client_id=<YOUR_CLIENT_ID>&scope=bot&permissions=0`.
+
 Now you're ready to run the bot!
 ```
 $ gulp prod

@@ -5,12 +5,10 @@ import * as config from '../config.json';
 import read_command from './read-command';
 
 const bot = new Discord.Client();
-const secret = config.secret;
+const token = config.token;
+const prefix = config.prefix;
 
-bot.login(secret);
-
-// TODO: Retrieve this from some customizable external source, i.e. ini file
-const command_prefix = '/';
+bot.login(token);
 
 /**
  * Sanity Log message on login
@@ -24,7 +22,7 @@ bot.on('ready', () => {
  */
 bot.on('message', (message) => {
 
-  let prefix_regex      = new RegExp('^' + command_prefix + '[a-zA-Z0-9_]+');
+  let prefix_regex      = new RegExp('^' + prefix + '[a-zA-Z0-9_]+');
   let components_regex  = new RegExp('[^ ]+|"(?:\\\\"|[^"])+"', 'g');
 
   // check if the message starts with the command prefix
