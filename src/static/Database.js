@@ -1,10 +1,6 @@
 import Loki from 'lokijs';
 
-/**
- * @type {Loki} db
- */
 const db    = new Loki('db.json');
-
 
 /**
  * Performs tasks pertaining to Database data

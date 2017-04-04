@@ -1,3 +1,6 @@
+/**
+ * Utility class for doing operations involving random number generation
+ */
 class Random {
     /**
      * Returns a random integer between min (inclusive) and max (inclusive)

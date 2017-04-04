@@ -152,6 +152,7 @@ class Member {
 
     /**
      * Returns the highest role of the member
+     *
      * @private
      */
     _getRole() {
@@ -171,6 +172,7 @@ class Member {
 
     /**
      * Calculates level of member
+     *
      * @private
      */
     _updateLevel() {
@@ -181,6 +183,7 @@ class Member {
 
     /**
      * Parses a message for profanities and tallies them into the profanity structure
+     *
      * @param {Message} message
      * @private
      */

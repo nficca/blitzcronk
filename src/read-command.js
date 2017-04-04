@@ -12,6 +12,7 @@ export default (msg, command, args) => {
 
   let execute_command = null;
 
+  // create lists of all commands
   const general_commands    = ['choose', 'echo', 'gif', 'gifr', 'help', 'ping', 'roll', 'users'];
   const data_commands       = ['chatters', 'stats', 'swearjar'];
 
@@ -31,6 +32,7 @@ export default (msg, command, args) => {
       return;
   }
 
+  // execute the desired command
   try {
       execute_command(msg, args);
   } catch (e) {
