@@ -1,4 +1,4 @@
-const Random = require('../classes/Random'),
+const Random = require('../static/Random'),
       giphy = require('giphy-api')(),
       _ = require('lodash'),
       docs = require('../../docs.json');
