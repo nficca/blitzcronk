@@ -1,5 +1,5 @@
-import Database from '../static/Database';
-import Random from '../static/Random';
+import Database from '../utils/Database';
+import Random from '../utils/Random';
 import Member from '../structures/Member';
 
 import * as Discord from '../../node_modules/discord.js';

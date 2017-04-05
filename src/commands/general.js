@@ -1,4 +1,4 @@
-import Random from '../static/Random';
+import Random from '../utils/Random';
 import giphy_api from 'giphy-api'
 
 import * as _ from 'lodash';
