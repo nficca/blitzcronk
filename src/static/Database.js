@@ -1,6 +1,6 @@
 import Loki from 'lokijs';
 
-const db    = new Loki('db.json');
+const db = new Loki('db.json');
 
 /**
  * Performs tasks pertaining to Database data
