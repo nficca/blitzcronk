@@ -14,13 +14,14 @@
     "giphy-api": "^1.2.1",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
+    "gulp-clean": "^0.3.2",
     "gulp-concat": "^2.6.0",
-    "gulp-jsdoc-json": "^1.0.1",
     "gulp-nodemon": "^2.2.1",
     "gulp-uglify": "^2.0.0",
     "lodash": "^4.16.6",
     "lokijs": "^1.4.2",
     "node-opus": "^0.2.1",
-    "opusscript": "0.0.1"
+    "opusscript": "0.0.1",
+    "shell-quote": "^1.6.1"
   }
 }
