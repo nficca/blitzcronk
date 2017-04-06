@@ -1,5 +1,6 @@
 var gulp    = require('gulp'),
     babel   = require('gulp-babel'),
+    clean   = require('gulp-clean'),
     uglify  = require('gulp-uglify'),
     nodemon = require('gulp-nodemon');
 
@@ -13,6 +14,11 @@ gulp.task('scripts', function() {
         .pipe(babel({presets: ['es2015']}))
         .pipe(uglify())
         .pipe(gulp.dest('dist/'));
+});
+
+gulp.task('clean', function() {
+    return gulp.src('dist', {read: false})
+        .pipe(clean());
 });
 
 gulp.task('start', function() {
