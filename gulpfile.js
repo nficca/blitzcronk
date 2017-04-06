@@ -6,7 +6,7 @@ var gulp    = require('gulp'),
 
 var paths = {
     scripts: ['src/**/*.js'],
-    commands: ['src/commands/**/*.js']
+    commands: ['src/functions/**/*.js']
 };
 
 gulp.task('default', ['scripts', 'docs', 'start']);

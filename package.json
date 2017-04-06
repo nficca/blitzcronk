@@ -21,6 +21,7 @@
     "lodash": "^4.16.6",
     "lokijs": "^1.4.2",
     "node-opus": "^0.2.1",
-    "opusscript": "0.0.1"
+    "opusscript": "0.0.1",
+    "shell-quote": "^1.6.1"
   }
 }
