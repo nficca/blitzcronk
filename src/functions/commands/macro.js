@@ -1,54 +1,76 @@
 import Command from '../../structures/Command';
+import * as Discord from '../../../node_modules/discord.js';
 import MacroCache from '../../utils/MacroCache';
 
 export default (function() {
     try{
         return new Command({
             name: 'macro',
-            args: ['add|remove','name', '...action?'],
-            description: '**add** a macro with **name** that runs **action** when called,' +
-                            ' or **remove** a macro with **name**.',
-            examples: [
-                '/macro add lol :laughing:\n' +
-                    '/lol\n -> :laughing:',
-                '/macro add p /ping\n' +
-                    '/p -> issues /ping command'
-            ]
-        }, function(addremove, name, ...action) {
-            // make sure all arguments are valid
-            if (typeof addremove === 'string' && addremove.length &&
-                typeof name === 'string' && name.length &&
-                ['add', 'remove'].indexOf(addremove) > -1) {
+            args: ['add|remove|list','name?', '...action?'],
+            description: '• **add** a macro with **name** that runs **action** when called\n' +
+                            '• **remove** a macro with **name**\n' +
+                            '• **list** all available macros'
+        }, function(func, name, ...action) {
+            // a add/remove/list was specified
+            if (typeof func === 'string' && func.length && ['add', 'remove', 'list'].indexOf(func) > -1) {
 
+                // get the macros
                 MacroCache.GetMacros().then(macros => {
-                    let existing = macros.has(name);
 
-                    if (addremove === 'add') {
-                        // add/update the macro if an action is specified
-                        if (action instanceof Array && action.join('').length) {
-                            MacroCache.AddMacro(name, action.join(" "));
-                            this.channel.sendMessage(`${existing ? 'Updated' : 'Added new'} macro: \`/${name}\`.`);
+                    if (func === 'list') {
+                        // if there are macros to list
+                        if (macros.size > 0) {
+
+                            // create an embed with each macro and their actions
+                            let embed = new Discord.RichEmbed();
+
+                            embed.setTitle(`List of Macros`);
+                            embed.setDescription(`The following is a list of all available macros and their actions.`);
+
+                            for (let [key, value] of macros.entries()) {
+                                embed.addField(`/${key}`, value);
+                            }
+
+                            // send the embed
+                            this.channel.sendEmbed(embed);
                         } else {
-                            this.channel.sendMessage(`${this.user}, you must specify an action for the macro.`);
+                            // no macros to list
+                            this.channel.sendMessage('There are no macros.');
                         }
                     } else {
-                        // remove the macro if it exists
-                        if (!existing) {
-                            this.channel.sendMessage(`${this.user}, there is no macro named \`${name}\`.`);
+
+                        // both add and remove require a name so ensure that it's valid
+                        if (typeof name === 'string' && name.length) {
+
+                            // see if the name exists
+                            let existing = macros.has(name);
+
+                            if (func === 'add') {
+                                // add/update the macro if an action is specified
+                                if (action instanceof Array && action.join('').length) {
+                                    MacroCache.AddMacro(name, action.join(" "));
+                                    this.channel.sendMessage(`${existing ? 'Updated' : 'Added new'} macro: \`/${name}\`.`);
+                                } else {
+                                    this.channel.sendMessage(`${this.user}, you must specify an action for the macro.`);
+                                }
+                            } else {
+                                // remove the macro if it exists
+                                if (!existing) {
+                                    this.channel.sendMessage(`${this.user}, there is no macro named \`${name}\`.`);
+                                } else {
+                                    MacroCache.RemoveMacro(name);
+                                    this.channel.sendMessage(`Removed macro \`${name}\``);
+                                }
+                            }
                         } else {
-                            MacroCache.RemoveMacro(name);
-                            this.channel.sendMessage(`Removed macro \`${name}\``);
+                            // name was invalid
+                            this.channel.sendMessage(`${this.user}, you must specify the name of the macro.`);
                         }
                     }
-
                 });
             } else {
-                // determine which argument was invalid
-                if (typeof name !== 'string' || !name.length) {
-                    this.channel.sendMessage(`${this.user}, you must specify the name of the macro.`);
-                } else {
-                    this.channel.sendMessage(`${this.user}, you must specify if you want to \`add\` or \`remove\` a macro.`);
-                }
+                // add/remove/list were not given or were invalid somehow
+                this.channel.sendMessage(`${this.user}, you must specify if you want to \`add\` or \`remove\` a macro.`);
             }
 
 
