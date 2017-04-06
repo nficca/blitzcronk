@@ -65,13 +65,8 @@ let parseCommandMessageText = (originalMessage, text) => {
                     // see if there is a valid command in the action (plus the rest of the message) and run it if so
                     parseCommandMessageText(originalMessage, action + action_args);
                 } else {
-                    // action is not attempting to use a command so it must be an alias
-                    // replace the original message for the aliased text
+                    // action is not attempting to use a command so just send the action as message
                     originalMessage.channel.sendMessage(action);
-
-                    // since the message was just an alias for a regular message and not
-                    // a command, tally the message
-                    Stats.CountMessage(originalMessage);
                 }
             } else {
                 // no command/macro was able to be found

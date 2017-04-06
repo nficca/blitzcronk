@@ -10,7 +10,7 @@ import choose   from './commands/choose';
 import echo     from './commands/echo';
 import gif      from './commands/gif';
 import gifr     from './commands/gifr';
-import macroadd from './commands/macroadd';
+import macro    from './commands/macro';
 import ping     from './commands/ping';
 import roll     from './commands/roll';
 import stats    from './commands/stats';
@@ -22,7 +22,7 @@ export default [
     echo,
     gif,
     gifr,
-    macroadd,
+    macro,
     ping,
     roll,
     stats,
