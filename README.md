@@ -23,6 +23,6 @@ Add the bot to your server using this link: `https://discordapp.com/api/oauth2/a
 
 Now you're ready to run the bot!
 ```
-$ gulp prod
+$ gulp scripts
 $ gulp start
 ```
