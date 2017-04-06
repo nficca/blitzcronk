@@ -8,8 +8,11 @@
 import Stats from '../utils/Stats';
 import * as config from '../../config.json';
 import commands_list from './commands';
-import create_help_command from './create-help-command';
+import createHelpCommand from './create-help-command';
+import MacroCache from '../utils/MacroCache';
 import quote from 'shell-quote';
+
+const prefix_regex = new RegExp('^' + config.prefix + '[a-zA-Z0-9_]+');
 
 /**
  * List of all available commands
@@ -25,8 +28,65 @@ for (let command of commands_list) {
 }
 
 // create the help command separately since we need all the previous commands' metadata first
-let help = create_help_command(commands);
+let help = createHelpCommand(commands);
 commands.set(help.name, help);
+
+
+/**
+ * Parses text with a command and runs the command if one exists.
+ * Returns true if a command is run, and false otherwise.
+ *
+ * The original message object must be passed separately from the text so that the parsing
+ * of the text can be recursive and still use the original message.
+ *
+ * @param {Message} originalMessage
+ * @param {string}  text
+ */
+let parseCommandMessageText = (originalMessage, text) => {
+
+    // split message into components
+    let components = quote.parse(text.substring(config.prefix.length));
+
+    // check if command exists
+    if (commands.has(components[0])) {
+        // run command
+        commands.get(components[0]).run(originalMessage.author, originalMessage.channel, components.slice(1));
+    }
+
+    else {
+        MacroCache.GetMacros().then(macros => {
+            // check if command is a macro
+            if (macros.has(components[0])) {
+                let action = macros.get(components[0]);
+
+                if (prefix_regex.test(action)) {
+                    let action_args = components.slice(1).length ? ` ${components.slice(1).join(" ")}` : '';
+
+                    // see if there is a valid command in the action (plus the rest of the message) and run it if so
+                    parseCommandMessageText(originalMessage, action + action_args);
+                } else {
+                    // action is not attempting to use a command so it must be an alias
+                    // replace the original message for the aliased text
+                    originalMessage.channel.sendMessage(action);
+
+                    // since the message was just an alias for a regular message and not
+                    // a command, tally the message
+                    Stats.CountMessage(originalMessage);
+                }
+            } else {
+                // no command/macro was able to be found
+                originalMessage.reply(`\`${components[0]}\` is not a command.`).catch(console.error);
+                return false;
+            }
+        }).catch(error => {
+            console.error(error);
+            return false;
+        });
+    }
+
+    // command/macro was found and run
+    return true;
+};
 
 
 /**
@@ -36,21 +96,10 @@ commands.set(help.name, help);
  * @param {Message} message
  */
 let read = message => {
-    let prefix_regex      = new RegExp('^' + config.prefix + '[a-zA-Z0-9_]+');
-
     // check if prefix is at beginning of message and that it wasn't sent by a bot
     if (prefix_regex.test(message.content) && !message.author.bot) {
-        // split message into components
-        let components = quote.parse(message.content.substring(config.prefix.length));
-
-        // check if command exists
-        if (commands.has(components[0])) {
-            // run command
-            commands.get(components[0]).run(message.author, message.channel, components.slice(1));
-        } else {
-            // inform user that command doesn't exist
-            message.reply(`\`${components[0]}\` is not a command.`).catch(console.error);
-        }
+        // attempt to parse and run the command
+        parseCommandMessageText(message, message.content);
     } else {
         // tally normal message
         Stats.CountMessage(message);

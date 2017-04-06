@@ -38,7 +38,7 @@ class Stats {
                 member.countMessage(message);
 
                 // update the document in the collection
-                Database.UpdateCollection(users, doc, member.json);
+                Database.ModifyDocument(users, doc, member.json);
             }
         });
     }
@@ -81,7 +81,7 @@ class Stats {
                 member.addReaction(reaction);
 
                 // update the document in the collection
-                Database.UpdateCollection(users, doc, member.json);
+                Database.ModifyDocument(users, doc, member.json);
             }
         });
     }
