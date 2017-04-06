@@ -1,17 +1,12 @@
 var gulp    = require('gulp'),
     babel   = require('gulp-babel'),
     uglify  = require('gulp-uglify'),
-    nodemon = require('gulp-nodemon'),
-    jsdoc   = require('gulp-jsdoc-json');
+    nodemon = require('gulp-nodemon');
 
 var paths = {
     scripts: ['src/**/*.js'],
     commands: ['src/functions/**/*.js']
 };
-
-gulp.task('default', ['scripts', 'docs', 'start']);
-
-gulp.task('prod', ['scripts', 'docs']);
 
 gulp.task('scripts', function() {
     return gulp.src(paths.scripts)
@@ -20,16 +15,10 @@ gulp.task('scripts', function() {
         .pipe(gulp.dest('dist/'));
 });
 
-gulp.task('docs', function() {
-    return gulp.src(paths.commands)
-        .pipe(jsdoc({output: 'docs.json'}))
-        .pipe(gulp.dest('.'));
-});
-
 gulp.task('start', function() {
    nodemon({
        script: 'dist/bot.js',
        watch: paths.scripts,
-       tasks: ['scripts', 'docs']
+       tasks: ['scripts']
    });
 });
