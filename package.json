@@ -19,7 +19,7 @@
     "gulp-nodemon": "^2.2.1",
     "gulp-uglify": "^2.0.0",
     "lodash": "^4.16.6",
-    "lokijs": "^1.4.2",
+    "lokijs": "^1.4.3",
     "node-opus": "^0.2.1",
     "opusscript": "0.0.1",
     "shell-quote": "^1.6.1"
